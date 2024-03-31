@@ -1,30 +1,47 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <section
+    class="flex flex-col max-w-3xl gap-8 p-10 bg-white dark:bg-gray-800 rounded-xl"
+  >
+    <h1 class="text-4xl font-bold text-center text-black dark:text-white">
+      Tailwind CSS + PrimeVue
+    </h1>
+    <Panel header="Default Preset">
+      <p>
+        First panel component uses the global pass through preset from the
+        Tailwind CSS based implementation of PrimeOne Design 2023.
+      </p>
+    </Panel>
+
+    <Panel
+      header="Custom Header"
+      :pt="{
+        header:
+          'p-5 flex items-center justify-between border border-indigo-300 bg-indigo-500 text-indigo-50 rounded-tl-lg rounded-tr-lg dark:bg-indigo-900 dark:border-indigo-900/40 dark:text-white/80',
+      }"
+    >
+      <p>Second panel overrides the header section with custom style.</p>
+    </Panel>
+
+    <Panel
+      header="Custom Design"
+      :ptOptions="{ mergeSections: false }"
+      :pt="{
+        header:
+          'flex items-center justify-center p-5 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 rounded-tl-2xl rounded-tr-2xl text-white',
+        title: 'leading-none font-bold uppercase text-2xl',
+        content:
+          'bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 px-5 pb-8 pt-3 text-white text-center rounded-bl-2xl rounded-br-2xl text-xl',
+      }"
+    >
+      <p>
+        Third panel ignores the default preset with
+        <b>mergeSections: false</b> and applies a custom style to all elements
+        of the panel instead.
+      </p>
+    </Panel>
+  </section>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
