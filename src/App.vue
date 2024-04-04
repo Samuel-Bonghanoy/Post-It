@@ -1,9 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Navbar from "./components/Navigation/Navbar.vue";
+</script>
 
 <template>
   <section
-    class="flex flex-col max-w-3xl gap-8 p-10 bg-white dark:bg-gray-800 rounded-xl"
+    class="flex flex-col w-screen h-screen gap-8 p-10 bg-white dark:bg-gray-800 rounded-xl"
   >
+    <navbar />
     <h1 class="text-4xl font-bold text-center text-black dark:text-white">
       Tailwind CSS + PrimeVue
     </h1>
