@@ -69,6 +69,7 @@ const items = ref([
         height="38"
         fill="#000000"
         viewBox="0 0 256 256"
+        class="mr-3"
       >
         <path d="M192,80v88H120v32H64V80Z" opacity="0.2"></path>
         <path
