@@ -2,6 +2,7 @@
 import Navbar from "./components/Navigation/Navbar.vue";
 import Sidebar from "./components/Navigation/Sidebar.vue";
 import Post from "./components/Posts/Post.vue";
+import Header from "./components/UI/Header.vue";
 </script>
 
 <template>
@@ -16,7 +17,7 @@ import Post from "./components/Posts/Post.vue";
       </div>
 
       <div class="flex flex-col w-[80%] pt-10 mx-auto font-sans bg-midnight">
-        <!-- <Post /> -->
+        <Header />
         <router-view />
       </div>
     </section>

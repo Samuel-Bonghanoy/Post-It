@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Dialog from "primevue/dialog";
+import Button from "primevue/button";
 import { ref } from "vue";
 
 const visible = ref(false);
@@ -11,11 +12,13 @@ const visible = ref(false);
       label="Write Post"
       icon="pi pi-external-link"
       @click="visible = true"
-    />
+      class="h-[70%] text-black"
+      >Write Post</Button
+    >
     <Dialog
       v-model:visible="visible"
       modal
-      header="Header"
+      header="What's on your mind?"
       :style="{ width: '50rem' }"
       :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     >
