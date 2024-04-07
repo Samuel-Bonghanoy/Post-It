@@ -16,9 +16,6 @@ import Post from "./components/Posts/Post.vue";
       </div>
 
       <div class="flex flex-col w-[80%] pt-10 mx-auto font-sans bg-midnight">
-        <h1 class="pb-3 mb-3 text-4xl font-bold text-slate-100">
-          Welcome Back, Amy
-        </h1>
         <!-- <Post /> -->
         <router-view />
       </div>
