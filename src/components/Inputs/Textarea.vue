@@ -6,7 +6,7 @@ const value = ref("");
 </script>
 
 <template>
-  <div class="flex justify-center card">
-    <Textarea v-model="value" autoResize rows="5" cols="30" />
+  <div class="flex justify-start card">
+    <Textarea v-model="value" autoResize rows="5" cols="30" class="w-[100%]" />
   </div>
 </template>
