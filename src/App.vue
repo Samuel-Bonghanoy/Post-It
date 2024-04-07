@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Navbar from "./components/Navigation/Navbar.vue";
 import Sidebar from "./components/Navigation/Sidebar.vue";
+import Post from "./components/Posts/Post.vue";
 </script>
 
 <template>
@@ -15,10 +16,11 @@ import Sidebar from "./components/Navigation/Sidebar.vue";
       </div>
 
       <div class="flex flex-col w-[80%] pt-10 mx-auto font-sans bg-midnight">
-        <h1 class="pb-3 text-4xl font-bold text-slate-100">
+        <h1 class="pb-3 mb-3 text-4xl font-bold text-slate-100">
           Welcome Back, Amy
         </h1>
-        <!-- <router-view /> -->
+        <!-- <Post /> -->
+        <router-view />
       </div>
     </section>
   </div>

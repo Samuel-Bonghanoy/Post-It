@@ -1,3 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Post from "./Post.vue";
+</script>
 
-<template></template>
+<template>
+  <section class="flex flex-col gap-4">
+    <Post />
+    <Post />
+    <Post />
+    <Post />
+  </section>
+</template>
