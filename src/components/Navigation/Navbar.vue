@@ -61,7 +61,7 @@ const items = ref([
 </script>
 
 <template>
-  <Menubar :model="items" class="bg-red-50"
+  <Menubar :model="items" class="fixed top-0 left-0 z-10 w-full bg-red-50"
     ><template #start>
       <svg
         xmlns="http://www.w3.org/2000/svg"
