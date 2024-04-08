@@ -10,48 +10,8 @@ const items = ref([
     icon: "pi pi-home",
   },
   {
-    label: "Features",
+    label: "Following",
     icon: "pi pi-star",
-  },
-  {
-    label: "Projects",
-    icon: "pi pi-search",
-    items: [
-      {
-        label: "Core",
-        icon: "pi pi-bolt",
-        shortcut: "⌘+S",
-      },
-      {
-        label: "Blocks",
-        icon: "pi pi-server",
-        shortcut: "⌘+B",
-      },
-      {
-        label: "UI Kit",
-        icon: "pi pi-pencil",
-        shortcut: "⌘+U",
-      },
-      {
-        separator: true,
-      },
-      {
-        label: "Templates",
-        icon: "pi pi-palette",
-        items: [
-          {
-            label: "Apollo",
-            icon: "pi pi-palette",
-            badge: 2,
-          },
-          {
-            label: "Ultimax",
-            icon: "pi pi-palette",
-            badge: 3,
-          },
-        ],
-      },
-    ],
   },
   {
     label: "Contact",
