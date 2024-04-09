@@ -2,8 +2,10 @@ import type UserInterface from "./users";
 
 interface PostsInterface {
   id: number;
-  content: string;
+  body: string;
+  title: string;
   user: UserInterface;
+  createdAt: Date;
 }
 
 export default PostsInterface;
