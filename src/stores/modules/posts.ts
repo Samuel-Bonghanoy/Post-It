@@ -1,12 +1,23 @@
 import { defineStore } from "pinia";
 import PostService from "../../services/postService";
+import { PostsState } from "../types/posts";
 
 export const usePostsStore = defineStore("posts", {
-  state: () => {
+  state: (): PostsState => {
     return {
       posts: [],
     };
   },
 
-  actions: {},
+  actions: {
+    async initializePosts() {
+      let testposts;
+      try {
+        testposts = PostService.getAllPosts();
+      } catch (err) {
+        console.log(err);
+      }
+      return testposts;
+    },
+  },
 });
