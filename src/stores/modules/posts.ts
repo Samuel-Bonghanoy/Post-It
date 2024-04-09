@@ -13,7 +13,7 @@ export const usePostsStore = defineStore("posts", {
     async initializePosts() {
       let testposts;
       try {
-        testposts = PostService.getAllPosts();
+        testposts = await PostService.getAllPosts();
       } catch (err) {
         console.log(err);
       }
