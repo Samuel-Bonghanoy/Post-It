@@ -1,6 +1,9 @@
+import type UserInterface from "./users";
+
 interface PostsInterface {
-  label: string;
-  action: () => void;
+  id: number;
+  content: string;
+  user: UserInterface;
 }
 
 export default PostsInterface;
