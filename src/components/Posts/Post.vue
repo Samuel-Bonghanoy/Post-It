@@ -2,6 +2,13 @@
 import Card from "primevue/card";
 import Avatar from "primevue/avatar";
 import PostMenu from "./PostMenu.vue";
+import type PostsInterface from "../../types/interfaces/posts";
+
+const props = defineProps({
+  post: { type: Object as () => PostsInterface },
+});
+
+console.log(props);
 </script>
 
 <template>
@@ -13,16 +20,13 @@ import PostMenu from "./PostMenu.vue";
             image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
             shape="circle"
           />
-          <h1>Sample Post</h1>
+          <h1>{{ props.post?.title }}</h1>
         </div>
       </template>
       <template #content>
         <div class="flex flex-col gap">
           <p class="p-0 mt-[-15px] pb-4">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-            sed consequuntur error repudiandae numquam deserunt quisquam
-            repellat libero asperiores earum nam nobis, culpa ratione quam
-            perferendis esse, cupiditate neque quas!
+            {{ props.post?.body }}
           </p>
           <PostMenu />
         </div>

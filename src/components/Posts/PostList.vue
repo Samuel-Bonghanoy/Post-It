@@ -2,17 +2,15 @@
 import Post from "./Post.vue";
 import { usePostsStore } from "../../stores/modules/posts";
 
-const posts = usePostsStore();
+const postsStore = usePostsStore();
 
-const testposts = posts.initializePosts();
-console.log(testposts);
+postsStore.initializePosts();
 </script>
 
 <template>
   <section class="flex flex-col gap-4">
-    <Post />
-    <Post />
-    <Post />
-    <Post />
+    <div v-for="post in postsStore.posts" :key="post.id">
+      <Post :post="post" />
+    </div>
   </section>
 </template>

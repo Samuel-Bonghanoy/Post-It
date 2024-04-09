@@ -11,13 +11,15 @@ export const usePostsStore = defineStore("posts", {
 
   actions: {
     async initializePosts() {
-      let testposts;
       try {
-        testposts = await PostService.getAllPosts();
+        this.posts = (await PostService.getAllPosts()).data;
       } catch (err) {
         console.log(err);
       }
-      return testposts;
+    },
+
+    async createPost() {
+      await PostService.createPost();
     },
   },
 });
