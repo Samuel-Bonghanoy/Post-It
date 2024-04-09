@@ -44,19 +44,13 @@ const items = ref([
         :to="item.route"
         custom
       >
-        <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+        <a :href="href" v-bind="props.action" @click="navigate">
           <span :class="item.icon" />
           <span className="bg-primary-100 rounded-full mr-2 h-3 w-3"></span>
           <span class="ml-2">{{ item.label }}</span>
         </a>
       </router-link>
-      <a
-        v-else
-        v-ripple
-        :href="item.url"
-        :target="item.target"
-        v-bind="props.action"
-      >
+      <a v-else :href="item.url" :target="item.target" v-bind="props.action">
         <span :class="item.icon" />
         <span className="bg-primary-100 rounded-full mr-2 h-3 w-3"></span>
         <span class="ml-2">{{ item.label }}</span>
