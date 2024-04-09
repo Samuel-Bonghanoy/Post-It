@@ -1,12 +1,10 @@
 import { defineStore } from "pinia";
+import PostService from "../services/postService";
 
-export const useTasksStore = defineStore("posts", {
+export const usePostsStore = defineStore("posts", {
   state: () => {
     return {
-      taskList: [
-        { id: 1, task: "do this" },
-        { id: 2, task: "do that" },
-      ],
+      posts: [],
     };
   },
 
