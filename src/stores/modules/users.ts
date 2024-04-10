@@ -16,17 +16,24 @@ export const useUsersStore = defineStore("users", {
       try {
         let user = (await UserService.getUserByUserName(username)).data;
 
-        if (!user) return false;
+        if (!user) return console.error("Invalid user");
 
-        if (password !== user[0].password) return false;
+        if (password !== user[0].password) console.error("Wrong password");
 
         this.currentUser = user[0];
+
+        localStorage.setItem("user", JSON.stringify(this.currentUser));
 
         router.push("/home");
       } catch (err) {
         console.log(err);
+      }
+    },
+    checkSession() {
+      if (localStorage.getItem("user") !== null) {
+        this.currentUser = JSON.parse(localStorage.getItem("user") as string);
 
-        return false;
+        router.push("/home");
       }
     },
   },
