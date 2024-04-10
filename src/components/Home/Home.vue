@@ -3,6 +3,11 @@ import Navbar from "../Navigation/Navbar.vue";
 import Sidebar from "../Navigation/Sidebar.vue";
 import Header from "../UI/Header.vue";
 import Divider from "../UI/Divider.vue";
+import { useUsersStore } from "../../stores/modules/users";
+
+const usersStore = useUsersStore();
+
+usersStore.checkSession();
 </script>
 
 <template>
