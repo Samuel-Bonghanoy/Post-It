@@ -1,10 +1,16 @@
 import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router";
 import PostList from "../components/Posts/PostList.vue";
 import SignIn from "../components/SignIn/SignIn.vue";
+import Home from "../components/Home/Home.vue";
 
 const routes: Array<RouteRecordRaw> = [
-  { path: "/", component: PostList, name: "home" },
-  { path: "/signin", component: SignIn, name: "signin" },
+  { path: "/", component: SignIn, name: "signin" },
+  {
+    path: "/home",
+    component: Home,
+    name: "home",
+    children: [{ path: "", component: PostList }],
+  },
 ];
 
 const router = createRouter({
