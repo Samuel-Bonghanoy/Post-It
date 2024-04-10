@@ -20,10 +20,11 @@
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="48"
+            width="52"
+            height="52"
             viewBox="0 0 256 256"
-            class="mr-3 fill-primary-50"
+            fill="#ffffff"
+            class="mr-3"
           >
             <path d="M192,80v88H120v32H64V80Z" opacity="0.2"></path>
             <path
@@ -34,16 +35,16 @@
       </div>
 
       <input
-        class="justify-center p-2 font-semibold rounded-lg bg-white/10 text-primary-50 placeholder-primary-50"
+        class="justify-center p-3 font-semibold text-white rounded-lg bg-white/10 placeholder:text-white/60 focus:outline-none focus:bg-white/20"
         placeholder="Username"
       />
       <input
-        class="justify-center p-2 font-semibold rounded-lg placeholder-primary-50 bg-white/10 text-primary-50"
+        class="justify-center p-3 font-semibold text-white rounded-lg placeholder:text-white/60 bg-white/10 focus:outline-none focus:bg-white/20"
         placeholder="Password"
       />
 
       <button
-        class="justify-center p-2 font-semibold rounded-lg bg-white/10 text-primary-50 placeholder-primary-50"
+        class="px-3 py-2 text-white transition-colors duration-300 rounded-full bg-black/10 hover:bg-black/20 border-1 shadow-2 focus:outline-0 focus:bg-black/30"
       >
         Log in
       </button>
