@@ -22,8 +22,6 @@ export const useUsersStore = defineStore("users", {
 
         this.currentUser = user[0];
 
-        console.log(user);
-
         router.push("/home");
       } catch (err) {
         console.log(err);

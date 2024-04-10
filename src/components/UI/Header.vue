@@ -3,8 +3,6 @@ import PostInputModal from "../Inputs/PostInputModal.vue";
 import { useUsersStore } from "../../stores/modules/users";
 
 const usersStore = useUsersStore();
-
-console.log(usersStore.currentUser?.username);
 </script>
 
 <template>
