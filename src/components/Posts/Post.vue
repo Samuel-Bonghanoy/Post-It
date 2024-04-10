@@ -7,8 +7,6 @@ import type PostsInterface from "../../types/interfaces/posts";
 const props = defineProps({
   post: { type: Object as () => PostsInterface },
 });
-
-console.log(props);
 </script>
 
 <template>

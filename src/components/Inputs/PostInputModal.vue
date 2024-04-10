@@ -3,6 +3,7 @@ import Dialog from "primevue/dialog";
 import Button from "primevue/button";
 import Textarea from "./Textarea.vue";
 import InputText from "primevue/inputtext";
+import isEmptyString from "../../utils/isEmptyString";
 import { usePostsStore } from "../../stores/modules/posts";
 import { ref } from "vue";
 
@@ -15,7 +16,15 @@ const body = ref("");
 const onPostClick = () => {
   visible.value = true;
 
-  if(title.value !== "")
+  console.log(title, body);
+
+  if (isEmptyString(title.value) || isEmptyString(body.value)) return;
+
+  postsStore.createPost(body.value, title.value);
+
+  body.value = "";
+  title.value = "";
+  console.log("yues");
 };
 </script>
 
