@@ -14,7 +14,7 @@ const items = ref([
     icon: "pi pi-star",
   },
   {
-    label: "Contact",
+    label: "Sign in",
     icon: "pi pi-envelope",
   },
 ]);
