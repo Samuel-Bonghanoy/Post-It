@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import ColorPalette from "./ColorPalette.vue";
+import { ref } from "vue";
+
+const username = ref("");
+const password = ref("");
+
+const gradient = ref(
+  "bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900"
+);
+</script>
+
 <template>
   <div
     :class="[
@@ -37,10 +49,13 @@
       <input
         class="justify-center p-3 font-semibold text-white rounded-lg bg-white/10 placeholder:text-white/60 focus:outline-none focus:bg-white/20"
         placeholder="Username"
+        v-model="username"
       />
       <input
         class="justify-center p-3 font-semibold text-white rounded-lg placeholder:text-white/60 bg-white/10 focus:outline-none focus:bg-white/20"
         placeholder="Password"
+        v-model="password"
+        type="password"
       />
 
       <button
@@ -51,12 +66,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import ColorPalette from "./ColorPalette.vue";
-import { ref } from "vue";
-
-const gradient = ref(
-  "bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-purple-900 via-purple-400 to-purple-900"
-);
-</script>
