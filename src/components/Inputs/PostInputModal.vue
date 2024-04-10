@@ -16,15 +16,12 @@ const body = ref("");
 const onPostClick = () => {
   visible.value = false;
 
-  console.log(title.value, body);
-
   if (isEmptyString(title.value) || isEmptyString(body.value)) return;
 
   postsStore.createPost(body.value, title.value);
 
   body.value = "";
   title.value = "";
-  console.log("yues");
 };
 </script>
 
