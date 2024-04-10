@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import ColorPalette from "./ColorPalette.vue";
 import { ref } from "vue";
-import router from "../../router";
+import { useUsersStore } from "../../stores/modules/users";
+
+const usersStore = useUsersStore();
 
 const username = ref("");
 const password = ref("");
@@ -10,8 +12,11 @@ const gradient = ref(
   "bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-slate-900 via-purple-900 to-slate-900"
 );
 
-const login = () => {
-  router.push("/home");
+const onLogin = () => {
+  usersStore.login(username.value, password.value);
+
+  username.value = "";
+  password.value = "";
 };
 </script>
 
@@ -61,10 +66,11 @@ const login = () => {
         placeholder="Password"
         v-model="password"
         type="password"
+        password
       />
 
       <button
-        @click="login"
+        @click="onLogin"
         class="px-3 py-2 text-white transition-colors duration-300 rounded-full bg-black/10 hover:bg-black/20 border-1 shadow-2 focus:outline-0 focus:bg-black/30"
       >
         Log in

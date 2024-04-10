@@ -10,7 +10,7 @@ const UserService = {
     let { data: user } = await supabase
       .from("users")
       .select("*")
-      .eq("name", username);
+      .eq("username", username);
 
     return user;
   },

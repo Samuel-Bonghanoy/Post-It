@@ -9,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
     path: "/home",
     component: Home,
     name: "home",
-    children: [{ path: "", component: PostList }],
+    children: [{ path: "", component: PostList, name: "posts" }],
   },
 ];
 
