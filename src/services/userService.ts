@@ -7,12 +7,7 @@ const UserService = {
     return posts;
   },
   getUserByUserName: async (username: string) => {
-    let { data: user } = await supabase
-      .from("users")
-      .select("*")
-      .eq("username", username);
-
-    return user;
+    return await supabase.from("users").select("*").eq("username", username);
   },
 };
 

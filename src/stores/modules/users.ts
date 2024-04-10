@@ -14,13 +14,15 @@ export const useUsersStore = defineStore("users", {
   actions: {
     async login(username: string, password: string) {
       try {
-        let user = await UserService.getUserByUserName(username);
+        let user = (await UserService.getUserByUserName(username)).data;
 
         if (!user) return false;
 
         if (password !== user[0].password) return false;
 
         this.currentUser = user[0];
+
+        console.log(user);
 
         router.push("/home");
       } catch (err) {

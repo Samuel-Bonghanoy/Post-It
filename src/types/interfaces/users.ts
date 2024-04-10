@@ -1,8 +1,9 @@
 interface UserInterface {
   id: number;
-  userName: string;
+  username: string;
   bio: string;
   createdAt: Date;
+  password: string;
 }
 
 export default UserInterface;
