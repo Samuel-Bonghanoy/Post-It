@@ -3,11 +3,20 @@ import Dialog from "primevue/dialog";
 import Button from "primevue/button";
 import Textarea from "./Textarea.vue";
 import InputText from "primevue/inputtext";
+import { usePostsStore } from "../../stores/modules/posts";
 import { ref } from "vue";
+
+const postsStore = usePostsStore();
 
 const visible = ref(false);
 const title = ref("");
 const body = ref("");
+
+const onPostClick = () => {
+  visible.value = true;
+
+  if(title.value !== "")
+};
 </script>
 
 <template>
@@ -15,7 +24,7 @@ const body = ref("");
     <Button
       label="Write Post"
       icon="pi pi-external-link"
-      @click="visible = true"
+      @click="onPostClick"
       class="h-[70%] text-black"
       >Write Post</Button
     >
