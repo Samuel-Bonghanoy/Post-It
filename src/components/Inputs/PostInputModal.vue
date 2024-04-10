@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Dialog from "primevue/dialog";
 import Button from "primevue/button";
-import Textarea from "./Textarea.vue";
+import Textarea from "primevue/textarea";
 import InputText from "primevue/inputtext";
 import isEmptyString from "../../utils/isEmptyString";
 import { usePostsStore } from "../../stores/modules/posts";
@@ -14,9 +14,9 @@ const title = ref("");
 const body = ref("");
 
 const onPostClick = () => {
-  visible.value = true;
+  visible.value = false;
 
-  console.log(title, body);
+  console.log(title.value, body);
 
   if (isEmptyString(title.value) || isEmptyString(body.value)) return;
 
@@ -33,7 +33,7 @@ const onPostClick = () => {
     <Button
       label="Write Post"
       icon="pi pi-external-link"
-      @click="onPostClick"
+      @click="visible = true"
       class="h-[70%] text-black"
       >Write Post</Button
     >
@@ -50,11 +50,17 @@ const onPostClick = () => {
         <InputText v-model="title" />
 
         <h3 class="font-semibold">Post Content</h3>
-        <Textarea v-model="body" />
+        <Textarea
+          v-model="body"
+          autoResize
+          rows="5"
+          cols="30"
+          class="w-[100%]"
+        />
         <Button
           label="Write Post"
           class="self-end w-[20%] mt-2"
-          @click="visible = false"
+          @click="onPostClick"
           severity="success"
         />
       </div>

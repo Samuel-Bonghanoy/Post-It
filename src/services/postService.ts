@@ -7,10 +7,9 @@ const PostService = {
     return posts;
   },
   createPost: async (body: string, title: string) => {
-    return await supabase
-      .from("posts")
-      .insert([{ body, title, user_id: "1" }])
-      .select();
+    await supabase.from("posts").insert([{ body, title, user_id: "1" }]);
+
+    return await supabase.from("posts").select("*");
   },
 };
 

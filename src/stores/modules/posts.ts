@@ -19,7 +19,7 @@ export const usePostsStore = defineStore("posts", {
     },
 
     async createPost(body: string, title: string) {
-      await PostService.createPost(body, title);
+      this.posts = (await PostService.createPost(body, title)).data;
     },
   },
 });
