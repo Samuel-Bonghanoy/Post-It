@@ -1,16 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <form class="p-4 mb-6 bg-white rounded-lg shadow">
+  <form class="p-4 mb-6 bg-primary-300 rounded-lg shadow w-[95%]">
     <textarea
       name="message"
       placeholder="Type something..."
-      class="w-full p-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg"
+      class="w-full p-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
     ></textarea>
     <footer class="flex justify-between mt-2">
       <div class="flex gap-2">
         <span
-          class="flex items-center w-8 h-8 px-2 text-blue-400 transition duration-300 ease-out bg-blue-100 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white"
+          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-200 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -29,7 +29,7 @@
           </svg>
         </span>
         <span
-          class="flex items-center w-8 h-8 px-2 text-blue-400 transition duration-300 ease-out bg-blue-100 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white"
+          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-20 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -47,7 +47,7 @@
           </svg>
         </span>
         <span
-          class="flex items-center w-8 h-8 px-2 text-blue-400 transition duration-300 ease-out bg-blue-100 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white"
+          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-20 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -66,9 +66,9 @@
         </span>
       </div>
       <button
-        class="flex items-center px-4 py-2 text-sm text-white bg-blue-600 rounded-lg shadow-lg"
+        class="flex items-center px-4 py-2 text-sm text-white transition duration-300 ease-out rounded-lg shadow-lg bg-primary-200 hover:bg-primary-100 hover:text-white"
       >
-        Send
+        Post
         <svg
           class="ml-1"
           viewBox="0 0 24 24"
