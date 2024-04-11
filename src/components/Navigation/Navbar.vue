@@ -2,22 +2,22 @@
 import Menubar from "primevue/menubar";
 import InputText from "primevue/inputtext";
 import Avatar from "primevue/avatar";
+import { useUsersStore } from "../../stores/modules/users";
 import { ref } from "vue";
+
+const usersStore = useUsersStore();
 
 const items = ref([
   {
-    label: "Home",
-    icon: "pi pi-home",
-  },
-  {
-    label: "Following",
-    icon: "pi pi-star",
-  },
-  {
     label: "Log out",
     icon: "pi pi-envelope",
+    action: "logout",
   },
 ]);
+
+const logout = () => {
+  usersStore.logout();
+};
 </script>
 
 <template>
@@ -44,13 +44,19 @@ const items = ref([
         :to="item.route"
         custom
       >
-        <a :href="href" v-bind="props.action" @click="navigate">
+        <a :href="href" v-bind="props.action" @click="logout">
           <span :class="item.icon" />
           <span className="bg-primary-100 rounded-full mr-2 h-3 w-3"></span>
           <span class="ml-2">{{ item.label }}</span>
         </a>
       </router-link>
-      <a v-else :href="item.url" :target="item.target" v-bind="props.action">
+      <a
+        v-else
+        :href="item.url"
+        :target="item.target"
+        v-bind="props.action"
+        @click="logout"
+      >
         <span :class="item.icon" />
         <span className="bg-primary-100 rounded-full mr-2 h-3 w-3"></span>
         <span class="ml-2">{{ item.label }}</span>

@@ -36,5 +36,12 @@ export const useUsersStore = defineStore("users", {
         router.push("/home");
       }
     },
+    logout() {
+      this.currentUser = null;
+
+      localStorage.removeItem("user");
+
+      router.push("/");
+    },
   },
 });
