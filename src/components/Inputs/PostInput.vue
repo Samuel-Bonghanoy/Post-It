@@ -18,16 +18,19 @@ const onPostClick = () => {
 
   body.value = "";
   title.value = "";
-};</script>
+};
+</script>
 
 <template>
-  <form class="p-4 mb-6 bg-primary-300 rounded-lg shadow w-[95%]">
+  <div class="p-4 mb-6 bg-primary-300 rounded-lg shadow w-[95%]">
     <input
+      v-model="title"
       name="message"
       placeholder="Title"
       class="w-[40%] p-2 mb-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
-    ></input>
+    />
     <textarea
+      v-model="body"
       name="message"
       placeholder="Type something..."
       class="w-full p-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
@@ -91,6 +94,7 @@ const onPostClick = () => {
         </span>
       </div>
       <button
+        @click="onPostClick"
         class="flex items-center px-4 py-2 text-sm text-white transition duration-300 ease-out rounded-lg shadow-lg bg-primary-200 hover:bg-primary-100 hover:text-white"
       >
         Post
@@ -110,5 +114,5 @@ const onPostClick = () => {
         </svg>
       </button>
     </footer>
-  </form>
+  </div>
 </template>
