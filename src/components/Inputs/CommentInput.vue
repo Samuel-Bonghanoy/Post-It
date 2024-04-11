@@ -32,7 +32,7 @@
     </span>
     <input
       type="search"
-      class="w-full py-2 pl-4 pr-10 text-sm placeholder-gray-400 bg-gray-100 border border-transparent appearance-none rounded-tg"
+      class="w-full py-2 pl-4 pr-10 text-sm text-black placeholder-gray-500 border border-transparent appearance-none bg-primary-300 rounded-tg focus:outline-none"
       style="border-radius: 25px"
       placeholder="Post a comment..."
       autocomplete="off"

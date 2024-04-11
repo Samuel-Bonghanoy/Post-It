@@ -19,7 +19,7 @@ const props = defineProps({
           src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
         />
       </div>
-      <div class="flex flex-col mt-1 mb-2 ml-4">
+      <div class="flex flex-col mt-1 ml-4">
         <div class="text-sm font-semibold text-primary-300">John Doe</div>
         <div class="flex w-full mt-1">
           <div class="mr-1 text-xs text-gray-300 cursor-pointer font-base">
@@ -31,9 +31,8 @@ const props = defineProps({
     </div>
 
     <div class="px-2 mx-3 mb-1 text-sm text-primary-300">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500
+      <h1 class="mb-1.5 text-2xl font-bold">{{ props.post?.title }}</h1>
+      {{ props.post?.body }}
     </div>
     <Reactions />
 
