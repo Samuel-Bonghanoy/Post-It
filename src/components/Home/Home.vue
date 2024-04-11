@@ -10,7 +10,7 @@ usersStore.checkSession();
 </script>
 
 <template>
-  <div class="w-screen h-screen overflow-x-hidden bg-primary-100">
+  <div class="w-screen overflow-x-hidden bg-primary-100">
     <Navbar />
     <!-- Sidebar -->
     <section class="flex w-full h-full mt-[4%]">
