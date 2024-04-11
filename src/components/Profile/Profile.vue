@@ -1,159 +1,72 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main class="profile-page">
-    <section class="relative block h-500-px">
-      <div
-        class="absolute top-0 w-full h-full bg-center bg-cover"
-        style="
-          background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
-        "
-      >
-        <span
-          id="blackOverlay"
-          class="absolute w-full h-full bg-black opacity-50"
-        ></span>
-      </div>
-      <div
-        class="absolute bottom-0 left-0 right-0 top-auto w-full overflow-hidden pointer-events-none h-70-px"
-        style="transform: translateZ(0px)"
-      >
-        <svg
-          class="absolute bottom-0 overflow-hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          version="1.1"
-          viewBox="0 0 2560 100"
-          x="0"
-          y="0"
-        >
-          <polygon
-            class="fill-current text-blueGray-200"
-            points="2560 0 2560 100 0 100"
-          ></polygon>
-        </svg>
-      </div>
-    </section>
-    <section class="relative py-16 bg-blueGray-200">
-      <div class="container px-4 mx-auto">
-        <div
-          class="relative flex flex-col w-full min-w-0 mb-6 -mt-64 break-words bg-white rounded-lg shadow-xl"
-        >
-          <div class="px-6">
-            <div class="flex flex-wrap justify-center">
-              <div class="flex justify-center w-full px-4 lg:w-3/12 lg:order-2">
-                <div class="relative">
-                  <img
-                    alt="..."
-                    src="https://demos.creative-tim.com/notus-js/assets/img/team-2-800x800.jpg"
-                    class="absolute h-auto -m-16 -ml-20 align-middle border-none rounded-full shadow-xl lg:-ml-16 max-w-150-px"
-                  />
-                </div>
-              </div>
-              <div
-                class="w-full px-4 lg:w-4/12 lg:order-3 lg:text-right lg:self-center"
+  <!-- component -->
+  <div
+    class="relative w-full max-w-md min-w-0 mx-auto mt-[5%] mb-6 break-words bg-white shadow-lg md:max-w-2xl rounded-xl"
+  >
+    <div class="px-6">
+      <div class="flex flex-wrap justify-center">
+        <div class="flex justify-center w-full">
+          <div class="relative">
+            <img
+              src="https://github.com/creativetimofficial/soft-ui-dashboard-tailwind/blob/main/build/assets/img/team-2.jpg?raw=true"
+              class="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"
+            />
+          </div>
+        </div>
+        <div class="w-full mt-20 text-center">
+          <div class="flex justify-center pt-8 pb-0 lg:pt-4">
+            <div class="p-3 text-center">
+              <span
+                class="block text-xl font-bold tracking-wide uppercase text-slate-700"
+                >3,360</span
               >
-                <div class="px-3 py-6 mt-32 sm:mt-0">
-                  <button
-                    class="px-4 py-2 mb-1 text-xs font-bold text-white uppercase transition-all duration-150 ease-linear bg-pink-500 rounded shadow outline-none active:bg-pink-600 hover:shadow-md focus:outline-none sm:mr-2"
-                    type="button"
-                  >
-                    Connect
-                  </button>
-                </div>
-              </div>
-              <div class="w-full px-4 lg:w-4/12 lg:order-1">
-                <div class="flex justify-center py-4 pt-8 lg:pt-4">
-                  <div class="p-3 mr-4 text-center">
-                    <span
-                      class="block text-xl font-bold tracking-wide uppercase text-blueGray-600"
-                      >22</span
-                    ><span class="text-sm text-blueGray-400">Friends</span>
-                  </div>
-                  <div class="p-3 mr-4 text-center">
-                    <span
-                      class="block text-xl font-bold tracking-wide uppercase text-blueGray-600"
-                      >10</span
-                    ><span class="text-sm text-blueGray-400">Photos</span>
-                  </div>
-                  <div class="p-3 text-center lg:mr-4">
-                    <span
-                      class="block text-xl font-bold tracking-wide uppercase text-blueGray-600"
-                      >89</span
-                    ><span class="text-sm text-blueGray-400">Comments</span>
-                  </div>
-                </div>
-              </div>
+              <span class="text-sm text-slate-400">Posts</span>
             </div>
-            <div class="mt-12 text-center">
-              <h3
-                class="mb-2 text-4xl font-semibold leading-normal text-blueGray-700"
+            <div class="p-3 text-center">
+              <span
+                class="block text-xl font-bold tracking-wide uppercase text-slate-700"
+                >2,454</span
               >
-                Jenna Stones
-              </h3>
-              <div
-                class="mt-0 mb-2 text-sm font-bold leading-normal uppercase text-blueGray-400"
-              >
-                <i
-                  class="mr-2 text-lg fas fa-map-marker-alt text-blueGray-400"
-                ></i>
-                Los Angeles, California
-              </div>
-              <div class="mt-10 mb-2 text-blueGray-600">
-                <i class="mr-2 text-lg fas fa-briefcase text-blueGray-400"></i
-                >Solution Manager - Creative Tim Officer
-              </div>
-              <div class="mb-2 text-blueGray-600">
-                <i class="mr-2 text-lg fas fa-university text-blueGray-400"></i
-                >University of Computer Science
-              </div>
+              <span class="text-sm text-slate-400">Followers</span>
             </div>
-            <div class="py-10 mt-10 text-center border-t border-blueGray-200">
-              <div class="flex flex-wrap justify-center">
-                <div class="w-full px-4 lg:w-9/12">
-                  <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                    An artist of considerable range, Jenna the name taken by
-                    Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                    performs and records all of his own music, giving it a warm,
-                    intimate feel with a solid groove structure. An artist of
-                    considerable range.
-                  </p>
-                  <a href="#pablo" class="font-normal text-pink-500"
-                    >Show more</a
-                  >
-                </div>
-              </div>
+
+            <div class="p-3 text-center">
+              <span
+                class="block text-xl font-bold tracking-wide uppercase text-slate-700"
+                >564</span
+              >
+              <span class="text-sm text-slate-400">Following</span>
             </div>
           </div>
         </div>
       </div>
-      <footer class="relative pt-8 pb-6 mt-8 bg-blueGray-200">
-        <div class="container px-4 mx-auto">
-          <div
-            class="flex flex-wrap items-center justify-center md:justify-between"
-          >
-            <div class="w-full px-4 mx-auto text-center md:w-6/12">
-              <div class="py-1 text-sm font-semibold text-blueGray-500">
-                Made with
-                <a
-                  href="https://www.creative-tim.com/product/notus-js"
-                  class="text-blueGray-500 hover:text-gray-800"
-                  target="_blank"
-                  >Notus JS</a
-                >
-                by
-                <a
-                  href="https://www.creative-tim.com"
-                  class="text-blueGray-500 hover:text-blueGray-800"
-                  target="_blank"
-                >
-                  Creative Tim</a
-                >.
-              </div>
-            </div>
+      <div class="mt-2 text-center">
+        <h3 class="mb-1 text-2xl font-bold leading-normal text-slate-700">
+          Mike Thompson
+        </h3>
+        <div class="mt-0 mb-2 text-xs font-bold uppercase text-slate-400">
+          <i class="mr-2 opacity-75 fas fa-map-marker-alt text-slate-400"></i
+          >Paris, France
+        </div>
+      </div>
+      <div class="py-6 mt-6 text-center border-t border-slate-200">
+        <div class="flex flex-wrap justify-center">
+          <div class="w-full px-4">
+            <p class="mb-4 font-light leading-relaxed text-slate-600">
+              An artist of considerable range, Mike is the name taken by
+              Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and
+              records all of his own music, giving it a warm.
+            </p>
+            <a
+              href="javascript:;"
+              class="font-normal text-slate-700 hover:text-slate-400"
+              >Follow Account</a
+            >
           </div>
         </div>
-      </footer>
-    </section>
-  </main>
+      </div>
+    </div>
+  </div>
 </template>
