@@ -7,14 +7,6 @@ import { ref } from "vue";
 
 const usersStore = useUsersStore();
 
-const items = ref([
-  {
-    label: "Log out",
-    icon: "pi pi-envelope",
-    action: "logout",
-  },
-]);
-
 const logout = () => {
   usersStore.logout();
 };
@@ -29,7 +21,7 @@ const logout = () => {
         height="38"
         fill="#000000"
         viewBox="0 0 256 256"
-        class="mr-3"
+        class="ml-3"
       >
         <path d="M192,80v88H120v32H64V80Z" opacity="0.2"></path>
         <path
@@ -64,12 +56,21 @@ const logout = () => {
       </a>
     </template>
     <template #end>
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-3 mr-4">
         <InputText
           placeholder="Search"
           type="text"
           class="w-[8rem] sm:w-auto"
         />
+
+        <button
+          @click="logout"
+          class="px-3 py-2 text-white transition-colors duration-300 rounded-lg bg-primary-200 hover:bg-black/20 border-1 shadow-2 focus:outline-0 focus:bg-black/30"
+        >
+          <span />
+
+          <span>Sign Out</span>
+        </button>
         <Avatar
           image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
           shape="circle"

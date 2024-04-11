@@ -9,8 +9,8 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         fill="#dbd8e3"
         viewBox="0 0 256 256"
       >
@@ -25,8 +25,8 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         fill="#dbd8e3"
         viewBox="0 0 256 256"
       >
@@ -41,8 +41,8 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         fill="#dbd8e3"
         viewBox="0 0 256 256"
       >
@@ -57,8 +57,8 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
+        width="25"
+        height="25"
         fill="#dbd8e3"
         viewBox="0 0 256 256"
       >
