@@ -1,53 +1,54 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useUsersStore } from "../../stores/modules/users";
+
+const usersStore = useUsersStore();
+
+const { username, bio } = usersStore.currentUser;
+</script>
 
 <template>
-  <aside class="">
-    <div class="p-10 bg-white rounded-lg shadow">
+  <aside class="fixed w-[30%]">
+    <div
+      class="flex flex-col items-center p-6 rounded-lg shadow text-primary-300 bg-primary-200"
+    >
       <div class="flex flex-col items-center gap-1 text-center">
         <img
           class="w-32 h-32 p-2 mb-4 bg-white rounded-full shadow"
           src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
           alt=""
         />
-        <p class="font-semibold">John Doe</p>
+        <p class="font-bold">{{ username }}</p>
         <div
-          class="flex items-center justify-center text-sm leading-normal text-gray-400"
+          class="flex items-center justify-center text-sm italic leading-normal text-gray-300"
         >
-          <svg
-            viewBox="0 0 24 24"
-            class="mr-1"
-            width="16"
-            height="16"
-            stroke="currentColor"
-            stroke-width="2"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          Los Angeles, California
+          {{ bio }}
         </div>
       </div>
       <div class="flex items-center justify-center gap-2 my-3">
         <div class="mx-4 font-semibold text-center">
-          <p class="text-black">102</p>
-          <span class="text-gray-400">Posts</span>
+          <p class="text-gray-300">102</p>
+          <span class="text-gray-300">Posts</span>
         </div>
         <div class="mx-4 font-semibold text-center">
-          <p class="text-black">102</p>
-          <span class="text-gray-400">Followers</span>
+          <p class="text-gray-300">102</p>
+          <span class="text-gray-300">Followers</span>
         </div>
         <div class="mx-4 font-semibold text-center">
-          <p class="text-black">102</p>
-          <span class="text-gray-400">Folowing</span>
+          <p class="text-gray-300">102</p>
+          <span class="text-gray-300">Folowing</span>
         </div>
       </div>
+      <button
+        class="transition duration-300 ease-out shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white w-[50%] mt-4 p-2 rounded-lg"
+      >
+        Follow
+      </button>
     </div>
 
-    <div class="p-6 mt-6 bg-white rounded-lg shadow">
-      <h3 class="mb-4 text-sm font-semibold text-gray-600">Following</h3>
+    <div class="p-6 mt-6 rounded-lg shadow bg-primary-200">
+      <h3 class="mb-4 text-sm font-semibold text-primary-300">
+        Mutual Contacts
+      </h3>
       <ul class="flex items-center justify-center space-x-2">
         <!-- Story #1 -->
         <li class="flex flex-col items-center space-y-2">
@@ -59,7 +60,7 @@
             />
           </a>
           <!-- Username -->
-          <span class="text-xs text-gray-500"> Sage </span>
+          <span class="text-xs text-gray-300"> Sage </span>
         </li>
 
         <!-- Story #1 -->
@@ -73,7 +74,7 @@
           </a>
 
           <!-- Username -->
-          <span class="text-xs text-gray-500"> Jett </span>
+          <span class="text-xs text-gray-300"> Jett </span>
         </li>
 
         <!-- Story #2 -->
@@ -88,7 +89,7 @@
           </a>
 
           <!-- Username -->
-          <span class="text-xs text-gray-500"> Sky </span>
+          <span class="text-xs text-gray-300"> Sky </span>
         </li>
 
         <!-- Story #3 -->
@@ -103,7 +104,7 @@
           </a>
 
           <!-- Username -->
-          <span class="text-xs text-gray-500"> Olivia </span>
+          <span class="text-xs text-gray-300"> Olivia </span>
         </li>
 
         <!-- Story #4 -->
@@ -117,7 +118,7 @@
           </a>
 
           <!-- Username -->
-          <span class="text-xs text-gray-500"> Julia </span>
+          <span class="text-xs text-gray-300"> Julia </span>
         </li>
         <!-- Story #1 -->
         <li class="flex flex-col items-center space-y-2">
@@ -131,7 +132,7 @@
           </a>
 
           <!-- Username -->
-          <span class="text-xs text-gray-500"> Hendrick </span>
+          <span class="text-xs text-gray-300"> Hendrick </span>
         </li>
       </ul>
     </div>

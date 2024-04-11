@@ -12,11 +12,11 @@ const navigateHome = () => {
 
 <template>
   <nav
-    class="w-[80%] flex items-start mx-auto flex-col mt-[15%] gap-5 text-2xl font-semibold text-primary-300"
+    class="w-[80%] flex items-start mx-auto flex-col mt-[15%] gap-5 text-xl font-semibold text-primary-300"
   >
     <div
       @click="navigateHome"
-      class="flex items-center gap-2 p-2 px-6 rounded-lg hover:bg-primary-200"
+      class="flex items-center gap-4 p-2 px-6 rounded-lg hover:bg-primary-200"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const navigateHome = () => {
     </div>
     <div
       @click="navigateProfile"
-      class="flex items-center gap-2 p-2 px-6 rounded-lg hover:bg-primary-200"
+      class="flex items-center gap-4 p-2 px-6 rounded-lg hover:bg-primary-200"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const navigateHome = () => {
       <h2>Profile</h2>
     </div>
     <div
-      class="flex items-center gap-2 p-2 px-6 rounded-lg hover:bg-primary-200"
+      class="flex items-center gap-4 p-2 px-6 rounded-lg hover:bg-primary-200"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const navigateHome = () => {
       <h2>Notifications</h2>
     </div>
     <div
-      class="flex items-center gap-2 p-2 px-6 rounded-lg hover:bg-primary-200"
+      class="flex items-center gap-4 p-2 px-6 rounded-lg hover:bg-primary-200"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

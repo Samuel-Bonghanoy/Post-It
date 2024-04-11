@@ -61,7 +61,7 @@ const logout = () => {
               class="flex items-center flex-grow-0 flex-shrink-0 h-8 pl-5 w-13"
             >
               <Avatar
-                image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
+                image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
                 shape="circle"
               />
             </div>

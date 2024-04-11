@@ -5,8 +5,8 @@
     <div class="relative flex-grow-0 flex-shrink hidden sm:block">
       <input
         type="text"
-        class="w-full p-3 border-0 rounded-lg bg-gray-50 bg-purple-white"
-        placeholder="Search somthing..."
+        class="w-full p-3 border-0 rounded-lg bg-gray-50 bg-purple-white focus:outline-none"
+        placeholder="Search "
         style="min-width: 400px"
       />
       <div

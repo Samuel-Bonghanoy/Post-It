@@ -12,7 +12,7 @@ console.log(props.post);
 </script>
 
 <template>
-  <div class="mb-6 bg-primary-200 rounded-lg shadow w-[95%]">
+  <div class="mb-6 bg-primary-200 h-fit py-2 rounded-lg shadow w-[95%]">
     <div class="flex flex-row px-2 py-3 mx-3">
       <div class="w-auto h-auto rounded-full">
         <img
