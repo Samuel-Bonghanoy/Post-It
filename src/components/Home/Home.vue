@@ -13,7 +13,7 @@ usersStore.checkSession();
   <div class="w-screen h-screen overflow-x-hidden bg-primary-50">
     <Navbar />
     <!-- Sidebar -->
-    <section class="flex w-full h-full mt-[3%]">
+    <section class="flex w-full h-full mt-[4%]">
       <div class="w-[20%] h-screen flex max-h-screen fixed left-0">
         <Sidebar />
         <Divider />

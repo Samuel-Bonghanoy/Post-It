@@ -1,15 +1,7 @@
 <script setup lang="ts">
 import Menubar from "primevue/menubar";
-import InputText from "primevue/inputtext";
-import Avatar from "primevue/avatar";
-import { useUsersStore } from "../../stores/modules/users";
-import { ref } from "vue";
-
-const usersStore = useUsersStore();
-
-const logout = () => {
-  usersStore.logout();
-};
+import Search from "../Inputs/Search.vue";
+import AuthIcons from "./AuthIcons.vue";
 </script>
 
 <template>
@@ -21,7 +13,7 @@ const logout = () => {
         height="38"
         fill="#000000"
         viewBox="0 0 256 256"
-        class="ml-3"
+        class="ml-5"
       >
         <path d="M192,80v88H120v32H64V80Z" opacity="0.2"></path>
         <path
@@ -57,24 +49,8 @@ const logout = () => {
     </template>
     <template #end>
       <div class="flex items-center gap-3 mr-4">
-        <InputText
-          placeholder="Search"
-          type="text"
-          class="w-[8rem] sm:w-auto"
-        />
-
-        <button
-          @click="logout"
-          class="px-3 py-2 transition-colors duration-300 rounded-lg text-primary-300 text-md bg-primary-200 hover:bg-black/20 border-1 shadow-2 focus:outline-0 focus:bg-black/30"
-        >
-          <span />
-
-          <span>Sign Out</span>
-        </button>
-        <Avatar
-          image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
-          shape="circle"
-        />
+        <Search />
+        <AuthIcons />
       </div> </template
   ></Menubar>
 </template>
