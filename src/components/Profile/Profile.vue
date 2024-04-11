@@ -6,7 +6,7 @@ import ProfileDetails from "./ProfileDetails.vue";
   <!-- component -->
   <div class="app">
     <main
-      class="container grid grid-cols-1 gap-6 px-2 mx-12 mx-auto my-12 lg:grid-cols-2 w-[90%] mt-[-0.001%]"
+      class="container grid grid-cols-1 gap-6 px-2 mx-auto my-12 lg:grid-cols-2 w-[95%] mt-[-0.001%]"
     >
       <ProfileDetails />
 

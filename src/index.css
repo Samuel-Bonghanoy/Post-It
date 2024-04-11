@@ -27,3 +27,26 @@
   --surface-900: 92 84 112;
   --surface-950: 53 47 68;
 }
+
+::-webkit-scrollbar {
+  width: 0.2em;
+  border-radius: 50px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #352f44; */
+  background: #5c5470;
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #352f44;
+}

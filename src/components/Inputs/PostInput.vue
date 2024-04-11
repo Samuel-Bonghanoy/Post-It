@@ -1,7 +1,32 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import isEmptyString from "../../utils/isEmptyString";
+import { usePostsStore } from "../../stores/modules/posts";
+import { ref } from "vue";
+
+const postsStore = usePostsStore();
+
+const visible = ref(false);
+const title = ref("");
+const body = ref("");
+
+const onPostClick = () => {
+  visible.value = false;
+
+  if (isEmptyString(title.value) || isEmptyString(body.value)) return;
+
+  postsStore.createPost(body.value, title.value);
+
+  body.value = "";
+  title.value = "";
+};</script>
 
 <template>
   <form class="p-4 mb-6 bg-primary-300 rounded-lg shadow w-[95%]">
+    <input
+      name="message"
+      placeholder="Title"
+      class="w-[40%] p-2 mb-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
+    ></input>
     <textarea
       name="message"
       placeholder="Type something..."
