@@ -1,4 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import router from "../../router";
+
+const navigateProfile = () => {
+  router.push("/home/profile");
+};
+
+const navigateHome = () => {
+  router.push("/home");
+};
+</script>
 
 <template>
   <nav
@@ -18,7 +28,7 @@
           d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16Zm-88,0H104V160a4,4,0,0,1,4-4h40a4,4,0,0,1,4,4Z"
         ></path>
       </svg>
-      <h2>Home</h2>
+      <h2 @click="navigateHome">Home</h2>
     </div>
     <div
       class="flex items-center gap-2 p-2 px-6 rounded-lg hover:bg-primary-100"
@@ -34,7 +44,7 @@
           d="M172,120a44,44,0,1,1-44-44A44.05,44.05,0,0,1,172,120Zm60,8A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88.09,88.09,0,0,0-91.47-87.93C77.43,41.89,39.87,81.12,40,128.25a87.65,87.65,0,0,0,22.24,58.16A79.71,79.71,0,0,1,84,165.1a4,4,0,0,1,4.83.32,59.83,59.83,0,0,0,78.28,0,4,4,0,0,1,4.83-.32,79.71,79.71,0,0,1,21.79,21.31A87.62,87.62,0,0,0,216,128Z"
         ></path>
       </svg>
-      <h2>Profile</h2>
+      <h2 @click="navigateProfile">Profile</h2>
     </div>
     <div
       class="flex items-center gap-2 p-2 px-6 rounded-lg hover:bg-primary-100"

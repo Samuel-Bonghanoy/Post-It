@@ -65,7 +65,7 @@ const logout = () => {
 
         <button
           @click="logout"
-          class="px-3 py-2 text-white transition-colors duration-300 rounded-lg bg-primary-200 hover:bg-black/20 border-1 shadow-2 focus:outline-0 focus:bg-black/30"
+          class="px-3 py-2 transition-colors duration-300 rounded-lg text-primary-300 text-md bg-primary-200 hover:bg-black/20 border-1 shadow-2 focus:outline-0 focus:bg-black/30"
         >
           <span />
 

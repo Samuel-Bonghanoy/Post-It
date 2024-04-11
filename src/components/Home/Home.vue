@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Navbar from "../Navigation/Navbar.vue";
 import Sidebar from "../Navigation/Sidebar.vue";
-import Header from "../UI/Header.vue";
 import Divider from "../UI/Divider.vue";
 import { useUsersStore } from "../../stores/modules/users";
 
@@ -24,7 +23,6 @@ usersStore.checkSession();
         class="flex flex-col w-[80%] pt-10 mx-auto font-sans bg-midnight"
         style="margin-left: 20%"
       >
-        <Header />
         <router-view />
       </main>
     </section>
