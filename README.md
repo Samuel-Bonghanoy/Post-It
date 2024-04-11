@@ -3,7 +3,7 @@
 - [ ] Post likes
 - [ ] Post retweets
 - [ ] Post filters
-- [ ] Profile pages
+- [x] Profile pages
 - [ ] Following Page
 - [ ] Reposting
 - [ ] Commenting
