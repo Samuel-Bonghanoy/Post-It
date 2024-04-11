@@ -5,7 +5,7 @@ interface PostsInterface {
   body: string;
   title: string;
   user: UserInterface;
-  createdAt: Date;
+  created_at: Date;
 }
 
 export default PostsInterface;

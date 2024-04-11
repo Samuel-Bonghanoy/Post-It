@@ -2,7 +2,7 @@ interface UserInterface {
   id: number;
   username: string;
   bio: string;
-  createdAt: Date;
+  created_at: Date;
   password: string;
 }
 

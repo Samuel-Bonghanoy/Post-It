@@ -3,10 +3,12 @@ import type PostsInterface from "../../types/interfaces/posts";
 import Reactions from "./Reactions.vue";
 import Comment from "../Comments/Comment.vue";
 import CommentInput from "../Inputs/CommentInput.vue";
+import parseDate from "../../utils/parseDate";
 
 const props = defineProps({
   post: { type: Object as () => PostsInterface },
 });
+console.log(props.post);
 </script>
 
 <template>
@@ -25,7 +27,9 @@ const props = defineProps({
           <div class="mr-1 text-xs text-gray-300 cursor-pointer font-base">
             @johndoe
           </div>
-          <div class="text-xs font-thin text-gray-400">• 30 seconds ago</div>
+          <div class="text-xs font-thin text-gray-400">
+            • {{ parseDate(props.post?.created_at) }}
+          </div>
         </div>
       </div>
     </div>
