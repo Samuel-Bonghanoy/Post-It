@@ -22,23 +22,23 @@ const onPostClick = () => {
 </script>
 
 <template>
-  <div class="p-4 mb-6 bg-primary-300 rounded-lg shadow w-[95%]">
+  <div class="p-4 mb-6 bg-primary-200 rounded-lg shadow w-[95%]">
     <input
       v-model="title"
       name="message"
       placeholder="Title"
-      class="w-[40%] p-2 mb-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
+      class="w-[40%] p-2 mb-2 text-sm placeholder-gray-500 bg-primary-300 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
     />
     <textarea
       v-model="body"
       name="message"
       placeholder="Type something..."
-      class="w-full p-2 text-sm placeholder-gray-400 bg-gray-100 border border-transparent rounded-lg appearance-none rounded-tg focus:outline-none"
+      class="w-full p-2 text-sm placeholder-gray-500 border border-transparent rounded-lg appearance-none bg-primary-300 rounded-tg focus:outline-none"
     ></textarea>
     <footer class="flex justify-between mt-2">
       <div class="flex gap-2">
         <span
-          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-200 hover:text-white"
+          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-50 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -57,7 +57,7 @@ const onPostClick = () => {
           </svg>
         </span>
         <span
-          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-20 hover:text-white"
+          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-50 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -75,7 +75,7 @@ const onPostClick = () => {
           </svg>
         </span>
         <span
-          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-20 hover:text-white"
+          class="flex items-center w-8 h-8 px-2 transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-100 hover:bg-primary-50 hover:text-white"
         >
           <svg
             viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ const onPostClick = () => {
       </div>
       <button
         @click="onPostClick"
-        class="flex items-center px-4 py-2 text-sm text-white transition duration-300 ease-out rounded-lg shadow-lg bg-primary-200 hover:bg-primary-100 hover:text-white"
+        class="flex items-center px-4 py-2 text-sm text-white transition duration-300 ease-out rounded-lg shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white"
       >
         Post
         <svg
