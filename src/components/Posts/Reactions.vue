@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+
+const likeClicked = ref(false);
+const shareClicked = ref(false);
+</script>
 
 <template>
   <div class="flex justify-start mb-3 border-primary-100">
@@ -27,7 +32,13 @@
         />
       </div>
       <span
-        class="w-8 h-8 px-2 py-2 mr-2 text-center transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-50 hover:bg-primary-100"
+        class="w-8 h-8 px-2 py-2 mr-2 text-center transition duration-300 ease-out rounded-full cursor-pointer hover:bg-primary-100"
+        @click="shareClicked = !shareClicked"
+        :class="[
+          shareClicked
+            ? 'bg-primary-300 text-primary-50'
+            : 'bg-primary-50 text-primary-300',
+        ]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +56,13 @@
         </svg>
       </span>
       <span
-        class="w-8 h-8 px-2 py-2 mr-2 text-center transition duration-300 ease-out rounded-full cursor-pointer text-primary-300 bg-primary-50 hover:bg-primary-100"
+        class="w-8 h-8 px-2 py-2 mr-2 text-center transition duration-300 ease-out rounded-full cursor-pointer hover:bg-primary-100"
+        @click="likeClicked = !likeClicked"
+        :class="[
+          likeClicked
+            ? 'bg-primary-300 text-primary-50'
+            : 'bg-primary-50 text-primary-300',
+        ]"
       >
         <svg
           class="w-4 h-4"

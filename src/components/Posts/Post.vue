@@ -4,18 +4,23 @@ import Reactions from "./Reactions.vue";
 import Comment from "../Comments/Comment.vue";
 import CommentInput from "../Inputs/CommentInput.vue";
 import parseDate from "../../utils/parseDate";
+import router from "../../router";
 
 const props = defineProps({
   post: { type: Object as () => PostsInterface },
 });
 
 const { title, body, created_at, users } = props.post;
+
+const navigateToUser = () => {
+  router.push(`/home/profile/${users.id}`);
+};
 </script>
 
 <template>
   <div class="mb-6 bg-primary-200 h-fit py-2 rounded-lg shadow w-[95%]">
     <div class="flex flex-row px-2 py-3 mx-3">
-      <div class="w-auto h-auto rounded-full">
+      <div @click="navigateToUser" class="w-auto h-auto rounded-full">
         <img
           class="object-cover w-12 h-12 rounded-full shadow cursor-pointer"
           alt="User avatar"

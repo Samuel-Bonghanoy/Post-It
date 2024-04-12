@@ -6,6 +6,7 @@ interface PostsInterface {
   title: string;
   user: UserInterface;
   created_at: Date;
+  users: UserInterface[];
 }
 
 export default PostsInterface;
