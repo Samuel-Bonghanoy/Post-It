@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import isEmptyString from "../../utils/isEmptyString";
 import { usePostsStore } from "../../stores/modules/posts";
+import { useUsersStore } from "../../stores/modules/users";
 import { ref } from "vue";
 
 const postsStore = usePostsStore();
+const usersStore = useUsersStore();
 
 const visible = ref(false);
 const title = ref("");
@@ -14,7 +16,9 @@ const onPostClick = () => {
 
   if (isEmptyString(title.value) || isEmptyString(body.value)) return;
 
-  postsStore.createPost(body.value, title.value);
+  console.log(usersStore.currentUser);
+
+  postsStore.createPost(body.value, title.value, usersStore.currentUser?.id);
 
   body.value = "";
   title.value = "";

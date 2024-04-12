@@ -8,7 +8,6 @@ import parseDate from "../../utils/parseDate";
 const props = defineProps({
   post: { type: Object as () => PostsInterface },
 });
-console.log(props.post);
 </script>
 
 <template>
