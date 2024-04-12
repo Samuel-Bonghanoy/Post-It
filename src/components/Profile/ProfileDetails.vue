@@ -3,7 +3,9 @@ import { useUsersStore } from "../../stores/modules/users";
 
 const usersStore = useUsersStore();
 
-const { username, bio } = usersStore.currentUser;
+console.log(usersStore.currentUser);
+
+const { username, bio, profile_pic_url } = usersStore.currentUser;
 </script>
 
 <template>
@@ -13,8 +15,8 @@ const { username, bio } = usersStore.currentUser;
     >
       <div class="flex flex-col items-center gap-1 text-center">
         <img
-          class="w-32 h-32 p-2 mb-4 bg-white rounded-full shadow"
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2000&amp;q=80"
+          class="object-cover w-32 h-32 p-2 mb-4 bg-white rounded-full shadow"
+          :src="profile_pic_url"
           alt=""
         />
         <p class="font-bold">{{ username }}</p>

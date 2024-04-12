@@ -4,7 +4,15 @@ const PostService = {
   getAllPosts: async () => {
     const posts = await supabase
       .from("posts")
-      .select("*")
+      .select(
+        `
+      id, 
+      title, 
+      body,
+      created_at,
+      users ( id, username, profile_pic_url )
+    `
+      )
       .order("id", { ascending: false });
 
     return posts;
