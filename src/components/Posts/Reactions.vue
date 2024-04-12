@@ -4,7 +4,7 @@
   <div class="flex justify-start mb-3 border-primary-100">
     <div class="flex justify-end w-full pt-2 pr-5 mt-1">
       <div class="flex items-center w-full pt-2 pl-5 mt-1">
-        <p class="mr-2 text-xs text-primary-300">Seen by</p>
+        <p class="mr-2 text-xs text-primary-300">Liked by</p>
         <img
           class="inline-block object-cover w-6 h-6 text-white border-2 border-white rounded-full shadow-sm cursor-pointer"
           src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"

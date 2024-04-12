@@ -4,6 +4,7 @@ interface UserInterface {
   bio: string;
   created_at: Date;
   password: string;
+  profile_pic_url: string;
 }
 
 export default UserInterface;

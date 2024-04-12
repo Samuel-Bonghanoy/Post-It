@@ -8,6 +8,7 @@ export const useUsersStore = defineStore("users", {
     return {
       users: [],
       currentUser: null,
+      viewedUser: null,
     };
   },
 
@@ -42,6 +43,13 @@ export const useUsersStore = defineStore("users", {
       localStorage.removeItem("user");
 
       router.push("/");
+    },
+    async getUserById(id: number) {
+      let user = (await UserService.getUserById(id)).data;
+
+      if (!user) return console.error("Invalid user");
+
+      this.viewedUser = user[0];
     },
   },
 });

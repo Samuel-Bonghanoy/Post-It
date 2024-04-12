@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { useUsersStore } from "../../stores/modules/users";
+import { useRoute } from "vue-router";
+
+const route = useRoute();
 
 const usersStore = useUsersStore();
 
-console.log(usersStore.currentUser);
+await usersStore.getUserById(Number(route.params.id));
 
-const { username, bio, profile_pic_url } = usersStore.currentUser;
+const { username, bio, profile_pic_url } = usersStore.viewedUser;
 </script>
 
 <template>
@@ -37,7 +40,7 @@ const { username, bio, profile_pic_url } = usersStore.currentUser;
         </div>
         <div class="mx-4 font-semibold text-center">
           <p class="text-gray-300">102</p>
-          <span class="text-gray-300">Folowing</span>
+          <span class="text-gray-300">Following</span>
         </div>
       </div>
       <button

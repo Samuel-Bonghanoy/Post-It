@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import router from "../../router";
+import { useUsersStore } from "../../stores/modules/users";
+
+const usersStore = useUsersStore();
 
 const navigateProfile = () => {
-  router.push("/home/profile");
+  router.push(`/home/profile/${usersStore.currentUser?.id}`);
 };
 
 const navigateHome = () => {
