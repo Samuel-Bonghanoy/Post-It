@@ -2,6 +2,10 @@
 import { ref } from "vue";
 import { useUsersStore } from "../../stores/modules/users";
 import { usePostsStore } from "../../stores/modules/posts";
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
+
+const toast = useToast();
 
 const postsStore = usePostsStore();
 const usersStore = useUsersStore();
@@ -14,16 +18,26 @@ const props = defineProps({
   postId: Number,
 });
 
-console.log(props.postId);
+const show = () => {
+  toast.add({
+    severity: "info",
+    summary: "Comment Successful",
+    detail: "You have successfully posted a comment.",
+    life: 3000,
+  });
+};
 
 const onComment = () => {
+  if (!comment.value) return;
   postsStore.createComment(comment.value, id, props.postId as number);
+  show();
 
   comment.value = "";
 };
 </script>
 
 <template>
+  <Toast />
   <div
     class="relative flex items-center self-center w-full max-w-xl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400"
   >

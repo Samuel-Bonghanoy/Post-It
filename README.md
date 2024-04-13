@@ -9,4 +9,4 @@
 - [x] Commenting
 - [ ] Notifications
 - [ ] Follower System
-- [ ] Toasts
+- [x] Toasts
