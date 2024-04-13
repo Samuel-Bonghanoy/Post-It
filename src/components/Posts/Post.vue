@@ -53,7 +53,7 @@ const navigateToPost = () => {
         {{ body }}
       </div>
     </div>
-    <Reactions />
+    <Reactions :post-id="id" />
 
     <CommentInput :post-id="id" />
   </div>

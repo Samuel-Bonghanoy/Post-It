@@ -51,7 +51,7 @@ const navigateToUser = () => {
       <h1 class="mb-1.5 text-2xl font-bold">{{ title }}</h1>
       {{ body }}
     </div>
-    <Reactions />
+    <Reactions :post-id="id" />
 
     <div v-for="comment in postsStore.comments" :key="comment.body">
       <Comment :comment="comment" />

@@ -4,6 +4,12 @@ import LikedBy from "./LikedBy.vue";
 
 const likeClicked = ref(false);
 const shareClicked = ref(false);
+
+const onLikeClick = () => {};
+
+const props = defineProps({
+  postId: Number,
+});
 </script>
 
 <template>

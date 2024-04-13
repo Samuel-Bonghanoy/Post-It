@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import PostService from "../../services/postService";
 import CommentService from "../../services/commentService";
 import { PostsState } from "../types/posts";
+import InteractionService from "../../services/interactionsService";
 
 export const usePostsStore = defineStore("posts", {
   state: (): PostsState => {
@@ -35,6 +36,14 @@ export const usePostsStore = defineStore("posts", {
       this.comments = (
         await CommentService.createComment(body, user_id, post_id)
       ).data;
+    },
+
+    async likePost(user_id: number, post_id: number) {
+      return (await InteractionService.likePost(user_id, post_id)).data;
+    },
+
+    async getPostLikes(post_id: number) {
+      return (await InteractionService.getPostLikes(post_id)).data;
     },
   },
 });
