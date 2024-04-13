@@ -8,6 +8,7 @@ export const usePostsStore = defineStore("posts", {
     return {
       posts: [],
       viewedPost: null,
+      comments: [],
     };
   },
 
@@ -24,8 +25,10 @@ export const usePostsStore = defineStore("posts", {
       this.posts = (await PostService.createPost(body, title, user_id)).data;
     },
 
-    async getPostWithComments(post_id: number) {
-      this.viewedPost = (await CommentService.getPostAndComments(post_id)).data;
+    async getPostById(post_id: number) {
+      this.viewedPost = (await PostService.getPostById(post_id)).data[0];
+
+      this.comments = (await CommentService.getPostComments(post_id)).data;
     },
   },
 });

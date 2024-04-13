@@ -11,11 +11,9 @@ const postsStore = usePostsStore();
 
 const route = useRoute();
 
-const post = postsStore.posts?.filter(
-  (p) => p.id === Number(route.params.id)
-)[0];
+await postsStore.getPostById(Number(route.params.id));
 
-const { title, body, created_at, users, id } = post;
+const { title, body, created_at, users, id } = postsStore.viewedPost;
 
 const navigateToUser = () => {
   router.push(`/home/profile/${users.id}`);
