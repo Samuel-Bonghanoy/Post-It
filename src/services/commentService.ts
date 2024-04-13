@@ -1,13 +1,14 @@
 import { supabase } from "../supabase/supabaseClient";
 
 const CommentService = {
-  getPostComments: async (post_id: number) => {
+  getPostAndComments: async (post_id: number) => {
     const comments = await supabase
       .from("comments")
       .select(
         `  
       body,
       created_at,
+      posts (id, title, body,created_at)
       users ( id, username, profile_pic_url )
     `
       )

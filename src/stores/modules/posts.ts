@@ -1,11 +1,13 @@
 import { defineStore } from "pinia";
 import PostService from "../../services/postService";
+import CommentService from "../../services/commentService";
 import { PostsState } from "../types/posts";
 
 export const usePostsStore = defineStore("posts", {
   state: (): PostsState => {
     return {
       posts: [],
+      viewedPost: null,
     };
   },
 
@@ -20,6 +22,10 @@ export const usePostsStore = defineStore("posts", {
 
     async createPost(body: string, title: string, user_id: number) {
       this.posts = (await PostService.createPost(body, title, user_id)).data;
+    },
+
+    async getPostWithComments(post_id: number) {
+      this.viewedPost = (await CommentService.getPostAndComments(post_id)).data;
     },
   },
 });

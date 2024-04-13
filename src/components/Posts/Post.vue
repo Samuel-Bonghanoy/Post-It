@@ -4,7 +4,6 @@ import Reactions from "./Reactions.vue";
 import CommentInput from "../Inputs/CommentInput.vue";
 import parseDate from "../../utils/parseDate";
 import router from "../../router";
-import Comment from "../Comments/Comment.vue";
 
 const props = defineProps({
   post: { type: Object as () => PostsInterface },
@@ -54,8 +53,6 @@ const navigateToPost = () => {
       {{ body }}
     </div>
     <Reactions />
-
-    <Comment />
 
     <CommentInput />
   </div>
