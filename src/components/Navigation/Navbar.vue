@@ -5,7 +5,7 @@ import AuthIcons from "./AuthIcons.vue";
 </script>
 
 <template>
-  <Menubar :model="items" class="fixed top-0 left-0 z-10 w-full bg-red-50"
+  <Menubar class="fixed top-0 left-0 z-10 w-full bg-red-50"
     ><template #start>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,13 +34,7 @@ import AuthIcons from "./AuthIcons.vue";
           <span class="ml-2">{{ item.label }}</span>
         </a>
       </router-link>
-      <a
-        v-else
-        :href="item.url"
-        :target="item.target"
-        v-bind="props.action"
-        @click="logout"
-      >
+      <a v-else :href="item.url" :target="item.target" v-bind="props.action">
         <span :class="item.icon" />
         <span className="bg-primary-100 rounded-full mr-2 h-3 w-3"></span>
         <span class="ml-2">{{ item.label }}</span>

@@ -8,6 +8,7 @@ import router from "./router";
 import InputText from "primevue/inputtext";
 import Button from "primevue/button";
 import StyleClass from "primevue/styleclass";
+import ToastService from "primevue/toastservice";
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -21,6 +22,7 @@ pinia.use(({ store }) => {
 });
 
 app.use(PrimeVue, { unstyled: true, pt: Lara });
+app.use(ToastService);
 app.use(router);
 app.use(pinia);
 

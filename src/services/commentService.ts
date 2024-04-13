@@ -16,17 +16,17 @@ const CommentService = {
 
     return comments;
   },
-  createComment: async (body: string, user_id: number, post_id: number) => {
-    await supabase.from("comments").insert([{ body, user_id, post_id }]);
+  createComment: async (body: string, poster_id: number, post_id: number) => {
+    await supabase.from("comments").insert([{ body, poster_id, post_id }]);
 
     return await supabase
       .from("comments")
       .select(
         `  
-    body,
-    created_at,
-    users ( id, username, profile_pic_url )
-  `
+      body,
+      created_at,
+      users ( id, username, profile_pic_url )
+      `
       )
       .eq("post_id", post_id)
       .order("id", { ascending: false });

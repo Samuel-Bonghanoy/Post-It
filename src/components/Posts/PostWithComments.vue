@@ -22,7 +22,7 @@ const navigateToUser = () => {
 
 <template>
   <div
-    class="mb-2 bg-primary-200 h-fit py-2 rounded-lg shadow w-[95%] transition duration-300 ease-out hover:scale-[1.01] hover:shadow-slate-800"
+    class="mb-2 bg-primary-200 h-fit py-2 rounded-lg shadow w-[95%] transition duration-300 ease-out"
   >
     <div class="flex flex-row px-2 py-3 mx-3">
       <div @click="navigateToUser" class="w-auto h-auto rounded-full">
@@ -55,6 +55,6 @@ const navigateToUser = () => {
 
     <Comment />
 
-    <CommentInput />
+    <CommentInput :post-id="id" />
   </div>
 </template>

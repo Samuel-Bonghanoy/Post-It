@@ -1,7 +1,26 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useUsersStore } from "../../stores/modules/users";
+import { usePostsStore } from "../../stores/modules/posts";
+
+const postsStore = usePostsStore();
+const usersStore = useUsersStore();
+
+const { id, profile_pic_url } = usersStore.currentUser;
 
 const comment = ref("");
+
+const props = defineProps({
+  postId: Number,
+});
+
+console.log(props.postId);
+
+const onComment = () => {
+  postsStore.createComment(comment.value, id, props.postId as number);
+
+  comment.value = "";
+};
 </script>
 
 <template>
@@ -11,10 +30,11 @@ const comment = ref("");
     <img
       class="object-cover w-10 h-10 mr-2 rounded-full shadow cursor-pointer"
       alt="User avatar"
-      src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+      :src="profile_pic_url"
     />
     <span class="absolute inset-y-0 right-0 flex items-center pr-6">
       <button
+        @click="onComment"
         type="submit"
         class="p-1 focus:outline-none focus:shadow-none hover:text-primary-50"
       >

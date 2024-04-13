@@ -30,5 +30,11 @@ export const usePostsStore = defineStore("posts", {
 
       this.comments = (await CommentService.getPostComments(post_id)).data;
     },
+
+    async createComment(body: string, user_id: number, post_id: number) {
+      this.comments = (
+        await CommentService.createComment(body, user_id, post_id)
+      ).data;
+    },
   },
 });

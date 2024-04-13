@@ -16,7 +16,11 @@ const onPostClick = () => {
 
   if (isEmptyString(title.value) || isEmptyString(body.value)) return;
 
-  postsStore.createPost(body.value, title.value, usersStore.currentUser?.id);
+  postsStore.createPost(
+    body.value,
+    title.value,
+    usersStore.currentUser?.id as number
+  );
 
   body.value = "";
   title.value = "";
