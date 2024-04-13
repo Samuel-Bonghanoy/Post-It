@@ -6,7 +6,7 @@
 - [x] Profile pages
 - [ ] Following Page
 - [ ] Reposting
-- [ ] Commenting
+- [x] Commenting
 - [ ] Notifications
 - [ ] Follower System
 - [ ] Toasts
