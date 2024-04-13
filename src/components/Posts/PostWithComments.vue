@@ -53,7 +53,9 @@ const navigateToUser = () => {
     </div>
     <Reactions />
 
-    <Comment />
+    <div v-for="comment in postsStore.comments" :key="comment.body">
+      <Comment :comment="comment" />
+    </div>
 
     <CommentInput :post-id="id" />
   </div>
