@@ -7,6 +7,24 @@ import { useToast } from "primevue/usetoast";
 
 const toast = useToast();
 
+const show = () => {
+  toast.add({
+    severity: "info",
+    summary: "Comment Successful",
+    detail: "You have successfully posted a comment.",
+    life: 3000,
+  });
+};
+
+const showFail = () => {
+  toast.add({
+    severity: "info",
+    summary: "Comment Failed to Post",
+    detail: "You have failed to post a comment.",
+    life: 3000,
+  });
+};
+
 const postsStore = usePostsStore();
 const usersStore = useUsersStore();
 
@@ -18,17 +36,11 @@ const props = defineProps({
   postId: Number,
 });
 
-const show = () => {
-  toast.add({
-    severity: "info",
-    summary: "Comment Successful",
-    detail: "You have successfully posted a comment.",
-    life: 3000,
-  });
-};
-
 const onComment = () => {
-  if (!comment.value) return;
+  if (!comment.value) {
+    showFail();
+    return;
+  }
   postsStore.createComment(comment.value, id, props.postId as number);
   show();
 

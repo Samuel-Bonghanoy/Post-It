@@ -6,6 +6,28 @@ import isEmptyString from "../../utils/isEmptyString";
 import { usePostsStore } from "../../stores/modules/posts";
 import { useUsersStore } from "../../stores/modules/users";
 import { ref } from "vue";
+import Toast from "primevue/toast";
+import { useToast } from "primevue/usetoast";
+
+const toast = useToast();
+
+const show = () => {
+  toast.add({
+    severity: "info",
+    summary: "Post Successful",
+    detail: "You have successfully posted.",
+    life: 3000,
+  });
+};
+
+const showFail = () => {
+  toast.add({
+    severity: "info",
+    summary: "Post Failed",
+    detail: "You have failed to post.",
+    life: 3000,
+  });
+};
 
 const postsStore = usePostsStore();
 const usersStore = useUsersStore();
@@ -17,10 +39,14 @@ const body = ref("");
 const onPostClick = () => {
   visible.value = false;
 
-  if (isEmptyString(title.value) || isEmptyString(body.value)) return;
+  if (isEmptyString(title.value) || isEmptyString(body.value)) {
+    showFail();
+    return;
+  }
 
   postsStore.createPost(body.value, title.value, usersStore.currentUser?.id);
 
+  show();
   body.value = "";
   title.value = "";
 };
