@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import type PostsInterface from "../../types/interfaces/posts";
+import { useRoute } from "vue-router";
+import { usePostsStore } from "../../stores/modules/posts";
 import Reactions from "./Reactions.vue";
 import CommentInput from "../Inputs/CommentInput.vue";
 import parseDate from "../../utils/parseDate";
 import router from "../../router";
 import Comment from "../Comments/Comment.vue";
 
-const props = defineProps({
-  post: { type: Object as () => PostsInterface },
-});
+const postsStore = usePostsStore();
 
-const { title, body, created_at, users, id } = props.post;
+const route = useRoute();
+
+const post = postsStore.posts?.filter(
+  (p) => p.id === Number(route.params.id)
+)[0];
+
+const { title, body, created_at, users, id } = post;
 
 const navigateToUser = () => {
   router.push(`/home/profile/${users.id}`);
-};
-
-const navigateToPost = () => {
-  router.push(`/home/posts/${id}`);
 };
 </script>
 
 <template>
   <div
-    @click="navigateToPost"
     class="mb-2 bg-primary-200 h-fit py-2 rounded-lg shadow w-[95%] transition duration-300 ease-out hover:scale-[1.01] hover:shadow-slate-800"
   >
     <div class="flex flex-row px-2 py-3 mx-3">

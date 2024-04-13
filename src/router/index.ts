@@ -1,8 +1,10 @@
 import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router";
-import PostList from "../components/Posts/PostList.vue";
+
+import AllPosts from "../components/Posts/AllPosts.vue";
 import SignIn from "../components/SignIn/SignIn.vue";
 import Home from "../components/Home/Home.vue";
 import Profile from "../components/Profile/Profile.vue";
+import PostWithComments from "../components/Posts/PostWithComments.vue";
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", component: SignIn, name: "signin" },
@@ -12,7 +14,8 @@ const routes: Array<RouteRecordRaw> = [
     name: "home",
     children: [
       { path: "profile/:id", component: Profile, name: "profile" },
-      { path: "", component: PostList, name: "posts" },
+      { path: "", component: AllPosts, name: "posts" },
+      { path: "posts/:id", component: PostWithComments, name: "post" },
     ],
   },
 ];
