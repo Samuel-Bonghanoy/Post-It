@@ -4,7 +4,7 @@ import { usePostsStore } from "../../stores/modules/posts";
 
 const postsStore = usePostsStore();
 
-postsStore.initializePosts();
+await postsStore.initializePosts();
 </script>
 
 <template>
