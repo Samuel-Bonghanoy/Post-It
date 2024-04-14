@@ -44,8 +44,6 @@ export const useUsersStore = defineStore("users", {
           await InteractionService.getUserLikes(this.currentUser?.id as number)
         ).data;
 
-        console.log(this.likedPosts);
-
         router.push("/home");
       }
     },

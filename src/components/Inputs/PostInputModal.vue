@@ -64,7 +64,7 @@ const onPostClick = () => {
       v-model:visible="visible"
       modal
       header="What's on your mind?"
-      :style="{ width: '50rem' }"
+      :style="{ width: '50rem', maxHeight: '25rem' }"
       :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
       class="flex flex-col"
     >

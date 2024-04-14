@@ -3,6 +3,8 @@ import { ref } from "vue";
 import LikedBy from "./LikedBy.vue";
 import { usePostsStore } from "../../stores/modules/posts";
 import { useUsersStore } from "../../stores/modules/users";
+import ProgressSpinner from "primevue/progressspinner";
+import LikesModal from "./LikesModal.vue";
 import Dialog from "primevue/dialog";
 import router from "../../router";
 
@@ -131,8 +133,20 @@ const onLikeClick = () => {
     v-model:visible="visible"
     modal
     header="Liked By"
-    :style="{ width: '50rem' }"
+    :style="{ width: '50rem', maxHeight: '25rem' }"
     :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     class="flex flex-col"
-  ></Dialog>
+  >
+    <suspense>
+      <LikesModal :post-id="props.postId" />
+
+      <template #fallback>
+        <aside class="flex justify-center mt-[4%] w-full">
+          <div class="">
+            <ProgressSpinner />
+          </div>
+        </aside>
+      </template>
+    </suspense>
+  </Dialog>
 </template>
