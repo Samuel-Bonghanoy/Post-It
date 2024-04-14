@@ -29,16 +29,7 @@ const InteractionService = {
       console.log(err);
     }
 
-    return await supabase
-      .from("post_likes")
-      .select(
-        `
-      id,
-      users ( id, username, profile_pic_url )
-    `
-      )
-      .eq("post_id", post_id)
-      .order("id", { ascending: false });
+    return await supabase.from("postlikes").select("*").eq("user_id", user_id);
   },
   dislikePost: async (user_id: number, post_id: number) => {
     try {

@@ -22,11 +22,12 @@ const navigateToPost = () => {
 };
 
 const onLikeClick = () => {
+  if (likeClicked.value) {
+    usersStore.dislikePost(usersStore.currentUser.id, props.postId);
+  } else {
+    usersStore.likePost(usersStore.currentUser.id, props.postId);
+  }
   likeClicked.value = !likeClicked.value;
-
-  postsStore.likePost(usersStore.currentUser.id, props.postId);
-
-  console.log(usersStore.currentUser.id, props.postId);
 };
 </script>
 

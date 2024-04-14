@@ -63,5 +63,16 @@ export const useUsersStore = defineStore("users", {
 
       this.viewedUser = user[0];
     },
+    async likePost(user_id: number, post_id: number) {
+      this.likedPosts = (
+        await InteractionService.likePost(user_id, post_id)
+      ).data;
+    },
+
+    async dislikePost(user_id: number, post_id: number) {
+      this.likedPosts = (
+        await InteractionService.dislikePost(user_id, post_id)
+      ).data;
+    },
   },
 });
