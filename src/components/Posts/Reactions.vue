@@ -3,6 +3,7 @@ import { ref } from "vue";
 import LikedBy from "./LikedBy.vue";
 import { usePostsStore } from "../../stores/modules/posts";
 import { useUsersStore } from "../../stores/modules/users";
+import Dialog from "primevue/dialog";
 import router from "../../router";
 
 const props = defineProps({
@@ -16,6 +17,7 @@ const likeClicked = ref(
   usersStore.likedPosts?.filter((p) => p.post_id === props.postId).length !== 0
 );
 const shareClicked = ref(false);
+const visible = ref(false);
 
 const navigateToPost = () => {
   router.push(`/home/posts/${props.postId}`);
@@ -116,10 +118,21 @@ const onLikeClick = () => {
       </div>
     </div>
     <div class="flex justify-end w-full mx-5 mt-3 text-xs">
-      <div class="flex items-center mb-2 mr-4 rounded-md text-primary-300">
+      <div
+        @click="visible = true"
+        class="flex items-center mb-2 mr-4 rounded-md text-primary-300 hover:text-primary-50 hover:cursor-pointer"
+      >
         Likes:
         <div class="ml-1 text-gray-400 text-ms">120k</div>
       </div>
     </div>
   </div>
+  <Dialog
+    v-model:visible="visible"
+    modal
+    header="Liked By"
+    :style="{ width: '50rem' }"
+    :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
+    class="flex flex-col"
+  ></Dialog>
 </template>

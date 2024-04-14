@@ -6,7 +6,6 @@ import isEmptyString from "../../utils/isEmptyString";
 import { usePostsStore } from "../../stores/modules/posts";
 import { useUsersStore } from "../../stores/modules/users";
 import { ref } from "vue";
-import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 
 const toast = useToast();
