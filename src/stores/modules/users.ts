@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import UserService from "../../services/userService";
 import { UsersState } from "../types/users";
 import router from "../../router";
+import InteractionService from "../../services/interactionsService";
 
 export const useUsersStore = defineStore("users", {
   state: (): UsersState => {
@@ -9,6 +10,7 @@ export const useUsersStore = defineStore("users", {
       users: [],
       currentUser: null,
       viewedUser: null,
+      likedPosts: null,
     };
   },
 
@@ -25,14 +27,24 @@ export const useUsersStore = defineStore("users", {
 
         localStorage.setItem("user", JSON.stringify(this.currentUser));
 
+        this.likedPosts = (
+          await InteractionService.getUserLikes(this.currentUser?.id as number)
+        ).data;
+
         router.push("/home");
       } catch (err) {
         console.log(err);
       }
     },
-    checkSession() {
+    async checkSession() {
       if (localStorage.getItem("user") !== null) {
         this.currentUser = JSON.parse(localStorage.getItem("user") as string);
+
+        this.likedPosts = (
+          await InteractionService.getUserLikes(this.currentUser?.id as number)
+        ).data;
+
+        console.log(this.likedPosts);
 
         router.push("/home");
       }

@@ -3,16 +3,23 @@ import { ref } from "vue";
 import LikedBy from "./LikedBy.vue";
 import { usePostsStore } from "../../stores/modules/posts";
 import { useUsersStore } from "../../stores/modules/users";
-
-const postsStore = usePostsStore();
-const usersStore = useUsersStore();
-
-const likeClicked = ref(false);
-const shareClicked = ref(false);
+import router from "../../router";
 
 const props = defineProps({
   postId: Number,
 });
+
+const postsStore = usePostsStore();
+const usersStore = useUsersStore();
+
+const likeClicked = ref(
+  usersStore.likedPosts?.filter((p) => p.post_id === props.postId).length !== 0
+);
+const shareClicked = ref(false);
+
+const navigateToPost = () => {
+  router.push(`/home/posts/${props.postId}`);
+};
 
 const onLikeClick = () => {
   likeClicked.value = !likeClicked.value;
@@ -51,6 +58,7 @@ const onLikeClick = () => {
         </svg>
       </span>
       <span
+        @click="navigateToPost"
         class="flex items-center justify-center w-8 h-8 px-2 py-2 mr-2 text-center transition duration-300 ease-out rounded-full cursor-pointer bg-primary-50 text-primary-300 hover:bg-primary-100"
       >
         <svg
