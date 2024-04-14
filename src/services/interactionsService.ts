@@ -15,16 +15,33 @@ const InteractionService = {
 
     return likes;
   },
+  getUserLikes: async (user_id: number) => {
+    const likes = await supabase
+      .from("post_likes")
+      .select(
+        `  
+      id,
+      users ( id, username, profile_pic_url )
+    `
+      )
+      .eq("user_id", user_id);
+
+    return likes;
+  },
   likePost: async (user_id: number, post_id: number) => {
-    await supabase.from("post_likes").insert([{ user_id, post_id }]);
+    try {
+      await supabase.from("postlikes").insert([{ post_id, user_id }]);
+    } catch (err) {
+      console.log(err);
+    }
 
     return await supabase
       .from("post_likes")
       .select(
-        `  
-    id,
-    users ( id, username, profile_pic_url )
-  `
+        `
+      id,
+      users ( id, username, profile_pic_url )
+    `
       )
       .eq("post_id", post_id)
       .order("id", { ascending: false });

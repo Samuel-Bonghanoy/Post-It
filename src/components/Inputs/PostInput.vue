@@ -11,8 +11,8 @@ const toast = useToast();
 const show = () => {
   toast.add({
     severity: "info",
-    summary: "Comment Successful",
-    detail: "You have successfully posted a comment.",
+    summary: "Post Successful",
+    detail: "You have successfully posted.",
     life: 3000,
   });
 };
@@ -20,8 +20,8 @@ const show = () => {
 const showFail = () => {
   toast.add({
     severity: "info",
-    summary: "Comment Failed to Post",
-    detail: "You have failed to post a comment.",
+    summary: "Post Failed",
+    detail: "You have failed to post.",
     life: 3000,
   });
 };

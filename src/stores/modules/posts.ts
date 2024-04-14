@@ -39,7 +39,7 @@ export const usePostsStore = defineStore("posts", {
     },
 
     async likePost(user_id: number, post_id: number) {
-      return (await InteractionService.likePost(user_id, post_id)).data;
+      return await InteractionService.likePost(user_id, post_id);
     },
 
     async getPostLikes(post_id: number) {

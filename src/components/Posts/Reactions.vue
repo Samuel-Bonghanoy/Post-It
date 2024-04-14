@@ -1,15 +1,26 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import LikedBy from "./LikedBy.vue";
+import { usePostsStore } from "../../stores/modules/posts";
+import { useUsersStore } from "../../stores/modules/users";
+
+const postsStore = usePostsStore();
+const usersStore = useUsersStore();
 
 const likeClicked = ref(false);
 const shareClicked = ref(false);
 
-const onLikeClick = () => {};
-
 const props = defineProps({
   postId: Number,
 });
+
+const onLikeClick = () => {
+  likeClicked.value = !likeClicked.value;
+
+  postsStore.likePost(usersStore.currentUser.id, props.postId);
+
+  console.log(usersStore.currentUser.id, props.postId);
+};
 </script>
 
 <template>
@@ -18,7 +29,7 @@ const props = defineProps({
       <LikedBy />
       <span
         class="w-8 h-8 px-2 py-2 mr-2 text-center transition duration-300 ease-out rounded-full cursor-pointer hover:bg-primary-100"
-        @click="likeClicked = !likeClicked"
+        @click="onLikeClick"
         :class="[
           likeClicked
             ? 'bg-primary-300 text-primary-50'
