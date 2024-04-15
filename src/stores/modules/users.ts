@@ -59,6 +59,8 @@ export const useUsersStore = defineStore("users", {
           )
         ).data;
 
+        console.log(this.currentUserFollowing);
+
         router.push("/home");
       }
     },
