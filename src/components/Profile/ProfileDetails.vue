@@ -48,7 +48,7 @@ const onFollow = () => {
           {{ bio }}
         </div>
       </div>
-      <stats />
+      <Stats />
       <button
         @click="onFollow"
         class="transition duration-300 ease-out shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white w-[50%] mt-4 p-2 rounded-lg"
@@ -56,6 +56,6 @@ const onFollow = () => {
         {{ followed ? "Unfollow" : "Follow" }}
       </button>
     </div>
-    <mutual-contacts />
+    <Mutual-contacts />
   </aside>
 </template>

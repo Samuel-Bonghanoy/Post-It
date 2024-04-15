@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import router from "../../router";
 import { usePostsStore } from "../../stores/modules/posts";
+import LikesModalFollowButton from "./LikesModalFollowButton.vue";
 
 const props = defineProps({
   postId: Number,
@@ -44,10 +45,6 @@ const navigateToUser = (userId: number) => {
         </div>
       </div>
     </div>
-    <button
-      class="transition duration-300 ease-out shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white w-[15%] p-2 rounded-lg"
-    >
-      Follow
-    </button>
+    <LikesModalFollowButton :user-id="user.users.id" />
   </div>
 </template>
