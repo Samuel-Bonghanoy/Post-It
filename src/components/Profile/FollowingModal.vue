@@ -11,7 +11,9 @@ const navigateToUser = (userId: number) => {
 </script>
 
 <template>
-  <div v-if="usersStore.viewedUserFollowing.length === 0">No followers.</div>
+  <div v-if="usersStore.viewedUserFollowing.length === 0">
+    Not following anyone.
+  </div>
   <div
     v-for="user in usersStore.viewedUserFollowing"
     :key="user.followed_user_id"

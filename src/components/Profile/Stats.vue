@@ -49,7 +49,7 @@ const visibleFollowing = ref(false);
   <Dialog
     v-model:visible="visibleFollows"
     modal
-    header="Liked By"
+    header="Followed By"
     :style="{ width: '50rem', maxHeight: '25rem' }"
     :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     class="flex flex-col"
@@ -59,7 +59,7 @@ const visibleFollowing = ref(false);
   <Dialog
     v-model:visible="visibleFollowing"
     modal
-    header="Liked By"
+    header="Following"
     :style="{ width: '50rem', maxHeight: '25rem' }"
     :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     class="flex flex-col"
