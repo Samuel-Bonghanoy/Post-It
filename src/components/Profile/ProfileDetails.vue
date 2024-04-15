@@ -1,20 +1,30 @@
 <script setup lang="ts">
 import { useUsersStore } from "../../stores/modules/users";
 import { useRoute } from "vue-router";
+import { ref } from "vue";
 
 const route = useRoute();
+const userId = Number(route.params.id);
 
 const usersStore = useUsersStore();
 
-await usersStore.getUserById(Number(route.params.id));
+const followed = ref(
+  usersStore.currentUserFollowing.filter((u) => u.followed_user_id === userId)
+    .length !== 0
+);
+
+await usersStore.getUserById(userId);
 
 const { username, bio, profile_pic_url } = usersStore.viewedUser;
 
 const onFollow = () => {
-  usersStore.followUser(
-    usersStore.currentUser?.id as number,
-    Number(route.params.id)
-  );
+  if (followed.value) {
+    usersStore.unfollowUser(usersStore.currentUser?.id as number, userId);
+  } else {
+    usersStore.followUser(usersStore.currentUser?.id as number, userId);
+  }
+
+  followed.value = !followed.value;
 };
 </script>
 
@@ -54,7 +64,7 @@ const onFollow = () => {
         @click="onFollow"
         class="transition duration-300 ease-out shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white w-[50%] mt-4 p-2 rounded-lg"
       >
-        Follow
+        {{ followed ? "Unfollow" : "Follow" }}
       </button>
     </div>
 
