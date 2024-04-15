@@ -9,6 +9,13 @@ const usersStore = useUsersStore();
 await usersStore.getUserById(Number(route.params.id));
 
 const { username, bio, profile_pic_url } = usersStore.viewedUser;
+
+const onFollow = () => {
+  usersStore.followUser(
+    usersStore.currentUser?.id as number,
+    Number(route.params.id)
+  );
+};
 </script>
 
 <template>
@@ -44,6 +51,7 @@ const { username, bio, profile_pic_url } = usersStore.viewedUser;
         </div>
       </div>
       <button
+        @click="onFollow"
         class="transition duration-300 ease-out shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white w-[50%] mt-4 p-2 rounded-lg"
       >
         Follow

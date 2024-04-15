@@ -9,6 +9,7 @@ export const useUsersStore = defineStore("users", {
     return {
       users: [],
       currentUser: null,
+      currentUserFollowing: null,
       likedPosts: null,
       viewedUser: null,
       viewedUserFollowing: null,
@@ -33,6 +34,12 @@ export const useUsersStore = defineStore("users", {
           await InteractionService.getUserLikes(this.currentUser?.id as number)
         ).data;
 
+        this.currentUserFollowing = (
+          await InteractionService.getUserFollowing(
+            this.currentUser?.id as number
+          )
+        ).data;
+
         router.push("/home");
       } catch (err) {
         console.log(err);
@@ -44,6 +51,12 @@ export const useUsersStore = defineStore("users", {
 
         this.likedPosts = (
           await InteractionService.getUserLikes(this.currentUser?.id as number)
+        ).data;
+
+        this.currentUserFollowing = (
+          await InteractionService.getUserFollowing(
+            this.currentUser?.id as number
+          )
         ).data;
 
         router.push("/home");
@@ -83,6 +96,10 @@ export const useUsersStore = defineStore("users", {
       this.viewedUserFollows = (
         await InteractionService.followUser(following_user_id, followed_user_id)
       ).data;
+
+      this.currentUserFollowing = (
+        await InteractionService.getUserFollowing(following_user_id)
+      ).data;
     },
 
     async unfollowUser(following_user_id: number, followed_user_id: number) {
@@ -91,6 +108,10 @@ export const useUsersStore = defineStore("users", {
           following_user_id,
           followed_user_id
         )
+      ).data;
+
+      this.currentUserFollowing = (
+        await InteractionService.getUserFollowing(following_user_id)
       ).data;
     },
   },
