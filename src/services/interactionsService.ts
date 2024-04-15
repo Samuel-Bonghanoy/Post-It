@@ -80,7 +80,14 @@ const InteractionService = {
   getUserFollowing: async (user_id: number) => {
     return await supabase
       .from("follows")
-      .select("*")
+      .select(
+        `  
+      id,
+      following_user_id,
+      followed_user_id,
+      users ( id, username, profile_pic_url )
+    `
+      )
       .eq("following_user_id", user_id);
   },
 
