@@ -81,6 +81,10 @@ export const useUsersStore = defineStore("users", {
       this.viewedUserFollowing = (
         await InteractionService.getUserFollowing(id)
       ).data;
+
+      this.viewedUserFollows = (
+        await InteractionService.getUserFollowers(id)
+      ).data;
     },
     async likePost(user_id: number, post_id: number) {
       this.likedPosts = (

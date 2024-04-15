@@ -85,8 +85,8 @@ const InteractionService = {
       id,
       following_user_id,
       followed_user_id,
-      followedUserDetails:users!followed_user_id(*),
-      followingUserDetails:users!following_user_id(*)
+      followedUserDetails:users!followed_user_id(*)
+      fol
     `
       )
       .eq("following_user_id", user_id);
@@ -100,7 +100,6 @@ const InteractionService = {
       id,
       following_user_id,
       followed_user_id,
-      followedUserDetails:users!followed_user_id(*),
       followingUserDetails:users!following_user_id(*)
     `
       )
