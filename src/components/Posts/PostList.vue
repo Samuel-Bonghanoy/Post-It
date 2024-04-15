@@ -14,12 +14,14 @@ const posts = postsStore.posts?.filter(
       .includes(p.users.id) || p.users.id === usersStore.currentUser?.id
 );
 
+console.log(posts, postsStore.posts);
+
 await postsStore.initializePosts();
 </script>
 
 <template>
   <section class="flex flex-col gap-4">
-    <div v-for="post in posts" :key="post.id">
+    <div v-for="post in postsStore.posts" :key="post.id">
       <Post v-if="post" :post="post" />
     </div>
   </section>
