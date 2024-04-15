@@ -8,5 +8,5 @@
 - [ ] Reposting
 - [x] Commenting
 - [ ] Notifications
-- [ ] Follower System
+- [x] Follower System
 - [x] Toasts

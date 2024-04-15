@@ -22,11 +22,17 @@ const postsStore = usePostsStore();
       <p class="text-gray-300">
         {{ usersStore.viewedUserFollows?.length || "0" }}
       </p>
-      <span class="text-gray-300">Followers</span>
+      <span class="text-gray-300 hover:text-primary-100 hover:cursor-pointer"
+        >Followers</span
+      >
     </div>
     <div class="mx-4 font-semibold text-center">
-      <p class="text-gray-300">102</p>
-      <span class="text-gray-300">Following</span>
+      <p class="text-gray-300">
+        {{ usersStore.viewedUserFollowing?.length || "0" }}
+      </p>
+      <span class="text-gray-300 hover:text-primary-100 hover:cursor-pointer"
+        >Following</span
+      >
     </div>
   </div>
 </template>
