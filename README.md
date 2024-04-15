@@ -1,7 +1,6 @@
 ### TODO
 
 - [x] Post likes
-- [ ] Post retweets
 - [ ] Post filters
 - [x] Profile pages
 - [x] Following Page
