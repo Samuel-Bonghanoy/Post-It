@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import router from "../../router";
-import { useUsersStore } from "../../stores/modules/users";
 import LikesModalFollowButton from "../Posts/LikesModalFollowButton.vue";
+import { useUsersStore } from "../../stores/modules/users";
 
 const usersStore = useUsersStore();
 
