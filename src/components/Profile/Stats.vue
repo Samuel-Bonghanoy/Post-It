@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useUsersStore } from "../../stores/modules/users";
 import { usePostsStore } from "../../stores/modules/posts";
-import ProgressSpinner from "primevue/progressspinner";
+import Dialog from "primevue/dialog";
 import { ref } from "vue";
+import FollowsModal from "./FollowsModal.vue";
+import FollowingModal from "./FollowingModal.vue";
 
 const usersStore = useUsersStore();
 const postsStore = usePostsStore();
@@ -27,7 +29,9 @@ const visibleFollowing = ref(false);
       <p class="text-gray-300">
         {{ usersStore.viewedUserFollows?.length || "0" }}
       </p>
-      <span class="text-gray-300 hover:text-primary-100 hover:cursor-pointer"
+      <span
+        @click="visibleFollows = !visibleFollows"
+        class="text-gray-300 hover:text-primary-100 hover:cursor-pointer"
         >Followers</span
       >
     </div>
@@ -35,7 +39,9 @@ const visibleFollowing = ref(false);
       <p class="text-gray-300">
         {{ usersStore.viewedUserFollowing?.length || "0" }}
       </p>
-      <span class="text-gray-300 hover:text-primary-100 hover:cursor-pointer"
+      <span
+        @click="visibleFollowing = !visibleFollowing"
+        class="text-gray-300 hover:text-primary-100 hover:cursor-pointer"
         >Following</span
       >
     </div>
@@ -48,15 +54,7 @@ const visibleFollowing = ref(false);
     :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     class="flex flex-col"
   >
-    <suspense>
-      <template #fallback>
-        <aside class="flex justify-center mt-[4%] w-full">
-          <div class="">
-            <ProgressSpinner />
-          </div>
-        </aside>
-      </template>
-    </suspense>
+    <FollowsModal />
   </Dialog>
   <Dialog
     v-model:visible="visibleFollowing"
@@ -66,14 +64,6 @@ const visibleFollowing = ref(false);
     :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
     class="flex flex-col"
   >
-    <suspense>
-      <template #fallback>
-        <aside class="flex justify-center mt-[4%] w-full">
-          <div class="">
-            <ProgressSpinner />
-          </div>
-        </aside>
-      </template>
-    </suspense>
+    <FollowingModal />
   </Dialog>
 </template>

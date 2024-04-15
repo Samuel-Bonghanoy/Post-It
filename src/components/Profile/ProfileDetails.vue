@@ -10,6 +10,8 @@ const userId = Number(route.params.id);
 
 const usersStore = useUsersStore();
 
+const isNotCurrentUser = ref(usersStore.currentUser?.id !== userId);
+
 const followed = ref(
   usersStore.currentUserFollowing.filter((u) => u.followed_user_id === userId)
     .length !== 0
@@ -50,6 +52,7 @@ const onFollow = () => {
       </div>
       <Stats />
       <button
+        v-if="isNotCurrentUser"
         @click="onFollow"
         class="transition duration-300 ease-out shadow-lg bg-primary-100 hover:bg-primary-50 hover:text-white w-[50%] mt-4 p-2 rounded-lg"
       >
