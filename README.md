@@ -4,7 +4,7 @@
 - [ ] Post retweets
 - [ ] Post filters
 - [x] Profile pages
-- [ ] Following Page
+- [x] Following Page
 - [ ] Reposting
 - [x] Commenting
 - [ ] Notifications
