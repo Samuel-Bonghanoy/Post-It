@@ -1,7 +1,7 @@
 ### TODO
 
 - [x] Post likes
-- [ ] Post filters
+- [x] Post filters
 - [x] Profile pages
 - [x] Following Page
 - [ ] Reposting
