@@ -9,8 +9,10 @@ export const useUsersStore = defineStore("users", {
     return {
       users: [],
       currentUser: null,
-      viewedUser: null,
       likedPosts: null,
+      viewedUser: null,
+      viewedUserFollowing: null,
+      viewedUserFollows: null,
     };
   },
 
@@ -60,6 +62,10 @@ export const useUsersStore = defineStore("users", {
       if (!user) return console.error("Invalid user");
 
       this.viewedUser = user[0];
+
+      this.viewedUserFollowing = (
+        await InteractionService.getUserFollowing(id)
+      ).data;
     },
     async likePost(user_id: number, post_id: number) {
       this.likedPosts = (
@@ -70,6 +76,21 @@ export const useUsersStore = defineStore("users", {
     async dislikePost(user_id: number, post_id: number) {
       this.likedPosts = (
         await InteractionService.dislikePost(user_id, post_id)
+      ).data;
+    },
+
+    async followUser(following_user_id: number, followed_user_id: number) {
+      this.viewedUserFollows = (
+        await InteractionService.followUser(following_user_id, followed_user_id)
+      ).data;
+    },
+
+    async unfollowUser(following_user_id: number, followed_user_id: number) {
+      this.viewedUserFollows = (
+        await InteractionService.unfollowUser(
+          following_user_id,
+          followed_user_id
+        )
       ).data;
     },
   },

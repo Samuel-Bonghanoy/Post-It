@@ -57,7 +57,7 @@ const InteractionService = {
     return await supabase
       .from("follows")
       .select("*")
-      .eq("following_user_id", following_user_id);
+      .eq("followed_user_id", followed_user_id);
   },
 
   unfollowUser: async (following_user_id: number, followed_user_id: number) => {
@@ -74,7 +74,7 @@ const InteractionService = {
     return await supabase
       .from("follows")
       .select("*")
-      .eq("following_user_id", following_user_id);
+      .eq("followed_user_id", followed_user_id);
   },
 
   getUserFollowing: async (user_id: number) => {
