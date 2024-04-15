@@ -15,8 +15,6 @@ const mutualsId = followed?.filter((u) => following?.includes(u));
 const mutuals = usersStore.currentUserFollowing?.filter((u) =>
   mutualsId?.includes(u.followedUserDetails.id)
 );
-
-console.log(followed, following, mutuals);
 </script>
 
 <template>
