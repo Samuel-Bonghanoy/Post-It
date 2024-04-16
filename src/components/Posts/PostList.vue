@@ -14,8 +14,6 @@ const posts = postsStore.posts?.filter(
       .includes(p.users.id) || p.users.id === usersStore.currentUser?.id
 );
 
-console.log(posts, postsStore.posts);
-
 await postsStore.initializePosts();
 </script>
 
