@@ -59,5 +59,15 @@ To host the project on your local machine, do:
 npm run start
 ```
 
+### Output
+
+![image](https://github.com/Samuel-Bonghanoy/Post-It/assets/113536057/29ea3dd6-89a2-4bd4-930b-5d3ceba5e680)
+![image](https://github.com/Samuel-Bonghanoy/Post-It/assets/113536057/9cf09b6a-7049-443b-a3a6-967ff43b180f)
+![image](https://github.com/Samuel-Bonghanoy/Post-It/assets/113536057/fb2a1e0d-7745-46b5-bb4f-04f8abba5e9a)
+![image](https://github.com/Samuel-Bonghanoy/Post-It/assets/113536057/6dd80d22-c23e-4173-b83c-cf3d99ce52b7)
+![image](https://github.com/Samuel-Bonghanoy/Post-It/assets/113536057/5f4be3bd-d2c5-4c8f-b533-5757acb02894)
+
+
+
 
 
